@@ -7,197 +7,257 @@
   <body>
     <header class="main-header">
       <div class="header-top">
-        <div class="header-logo">
-          <a href="#">Техномарт</a>
+        <div class="container">
+          <a class="header-logo">Техномарт</a>
+          <form action="://echo.htmlacademy.ru" method="post">
+<!-- Можно ли использовать input type="image" для кнопки поисковика? -->
+            <input type="submit" name="search-btn">
+            <input type="search" name="search" placeholder="Поиск:">
+          </form>
+          <a href="#" class="bookmarks">Закладки:<span class="bookmarks-nbr">0</span></a>
+          <a href="#" class="cart">Корзина:<span class="items-nbr">0</span></a>
+          <a class="order-btn" href="#">Оформить заказ</a>
         </div>
-        <form>
-          <input type="search" name="search" placeholder="Поиск:">
-          <a href="#">Закладки</a>
-          <a href="#">Корзина</a>
-        </form>
-        <a class="btn" href="#">Оформить заказ</a>
       </div>
-      <div class="middle">
-        <p>Интернет-магазин строительных материалов и инструментов для ремонта</p>
-        <div class="header-contacts">
-          <div class="tel">
-            +7 (812) 555 05 55
+      <div class="header-bottom">
+        <div class="container">
+          <p>Интернет-магазин строительных материалов и инструментов для ремонта</p>
+          <div class="header-contacts">
+            <a href="tel:+78125550555" class="header-tel">
+              +7 (812) 555 05 55
+            </a>
+            <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
           </div>
-          <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
-          <a href="#">Войти</a>
-          <a href="#">Регистрация</a>
+          <div class="user-block">
+            <a href="#">Войти</a>
+            <a href="#">Регистрация</a>
+          </div>
         </div>
-      </div>
-      <nav class="main-menu">
-        <ul>
-          <li><a>Главная</a></li>
-          <li><a>Компания</a></li>
-          <li><a>Каталог</a></li>
-          <li><a>Новости</a></li>
-          <li><a>Спецпредложения</a></li>
-          <li><a>Доставка</a></li>
-          <li><a>Контакты</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <section class="promo">
-      <div class="materials">
-        <a href="#">На любой вкус</a>
-      </div>
-      <div class="instruments">
-        <a href="#">На все случаи</a>
-      </div>
-      <div class="tech">
-        <a href="#">Для стройки</a>
-      </div>
-      <div class="discount">
-        <a href="#">На 350 товаров</a>
-      </div>
-      <div class="delivery">
-        <a href="#">Бесплатно</a>
-      </div>
-      <div class="catalog">
-        <dl class="catalog-advert">
-          <dt>Дрели</dt>
-          <dd>Соседям на радость!</dd>
-        </dl>
-        <dl class="catalog-advert">
-          <dt>Перфораторы</dt>
-          <dd>Настоящие мужские игрушки</dd>
-        </dl>
-        <a href="#" class="prev"></a>
-        <a href="#" class="next"></a>
-        <a href="#" class="catalog-btn">Открыть каталог</a>
-      </div>
-    </section>
-
-    <section class="popular container">
-      <div class="popular-items">
-        <h2>Популярные товары</h2>
-        <a href="#" class="btn">Все популярные товары</a>
-        <div class="popular-item">
-          <p class="item-name">Перфоратор BOSCH BFG 9000</p>
-          <p class="item-old-price">32500</p>
-          <p class="item-new-price">25500</p>
-          <button type="button" name="button">В корзину</button>
-          <a href="#">Купить</a>
-        </div>
-        <div class="popular-item">
-          <p class="item-name">Перфоратор BOSCH BFG 3000</p>
-          <p class="item-old-price">22500</p>
-          <p class="item-new-price">15500</p>
-          <button type="button" name="button">В корзину</button>
-          <a href="#">Купить</a>
-        </div>
-        <div class="popular-item">
-          <p class="item-name">Перфоратор BOSCH BFG 6000</p>
-          <p class="item-old-price">30500</p>
-          <p class="item-new-price">25500</p>
-          <button type="button" name="button">В корзину</button>
-          <a href="#">Купить</a>
-        </div>
-        <div class="popular-item">
-          <p class="item-name">Перфоратор BOSCH BFG 2000</p>
-          <p class="item-old-price"></p>
-          <p class="item-new-price">12500</p>
-          <button type="button" name="button">В корзину</button>
-          <a href="#">Купить</a>
-        </div>
-      </div>
-      <div class="popular-brands">
-        <h2>Популярные производители</h2>
-        <a href="#" class="btn">Все производители</a>
-        <ul>
-          <li><a href="#">BOSCH</a></li>
-          <li><a href="#">Makita</a></li>
-          <li><a href="#">DeWALT</a></li>
-          <li><a href="#">Интерскол</a></li>
-          <li><a href="#">Hitachi</a></li>
-          <li><a href="#">LG</a></li>
-          <li><a href="#">AEG</a></li>
-          <li><a href="#">Metabo</a></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="?">
-      <div class="service">
-        <h2>Сервисы</h2>
-        <p>Хороший интернет-магазин отличается от плохого не только ценами!<br>
-           Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
-      </div>
-      <div class="shipping">
-        <ul>
-          <li><a href="#">Доставка</a></li>
-          <li><a href="#">Гарантия</a></li>
-          <li><a href="#">Кредит</a></li>
-        </ul>
-        <h2>Доставка</h2>
-        <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо хзаработаем, поднимая его на ваш этаж!</p>
-      </div>
-    </section>
-
-    <section class="about">
-      <div class="description">
-        <h2>Компания "Техномарт"</h2>
-        <p>Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта
-          и строительства не оставит равнодушными любителей сэкномить на гастарбайтерах.</p>
-        <p>Мы можем доставить ваш товар в самые отдаленные точки России!
-          Техномарт работает со многими транспортными компаниями:</p>
-        <ul>
-          <li>Деловые линии</li>
-          <li>Автотрейдинг</li>
-          <li>ЖелДорЭкспедиция</li>
-        </ul>
-        <a href="#" class="btn">Подробнее о компании</a>
-      </div>
-      <div class="contacts">
-        <p>Вы можете забрать товар сами, заехав в наш офис:</p>
-        <a href="#" class="btn">Заблудились? Напишите нам!</a>
-      </div>
-    </section>
-
-    <footer class="main-footer">
-      <div class="footer-top">
-        <div class="footer-logo">
-          <a href="#">Техномарт</a>
-        </div>
-        <nav class="footer-menu">
+        <nav class="main-menu container">
           <ul>
+            <li><a href="index.html">Главная</a></li>
             <li><a href="#">Компания</a></li>
+            <li><a href="catalog.html">Каталог</a></li>
             <li><a href="#">Новости</a></li>
-            <li><a href="#">Каталог</a></li>
+            <li><a href="#">Спецпредложения</a></li>
             <li><a href="#">Доставка</a></li>
             <li><a href="#">Контакты</a></li>
           </ul>
         </nav>
       </div>
-      <div class="footer-middle">
-        <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
-        <ul>
-          <li><a href="#">Материалы</a></li>
-          <li><a href="#">Техника</a></li>
-          <li><a href="#">Инструменты</a></li>
-          <li><a href="#">Спецпредложения</a></li>
-        </ul>
+    </header>
+
+    <main>
+      <div class="container">
+        <section class="categories">
+          <div class="category-materials new">
+            <h3>Материалы</h3>
+            <a href="#">На любой вкус</a>
+            <div class="category-pic"></div>
+          </div>
+          <div class="category-instruments">
+            <h3>Инструмент</h3>
+            <a href="#">На все случаи</a>
+            <div class="category-pic"></div>
+          </div>
+          <div class="category-tech">
+            <h3>Техника</h3>
+            <a href="#">Для стройки</a>
+            <div class="category-pic"></div>
+          </div>
+          <div class="category-discount">
+            <h3>Скидки 50%</h3>
+            <a href="#">На 350 товаров</a>
+            <div class="category-pic"></div>
+          </div>
+          <div class="category-delivery">
+            <h3>Доставка</h3>
+            <a href="#">Бесплатно</a>
+            <div class="category-pic"></div>
+          </div>
+          <div class="category-slider">
+            <div class="slider-one">
+<!-- Как разметить текст в слайдере? -->
+              <p>Дрели</p>
+              <p>Соседям на радость!</p>
+            </div>
+            <div class="slider-two">
+              <p>Перфораторы</p>
+              <p>Настоящие мужские игрушки</p>
+            </div>
+            <a href="#" class="open-catalog-btn">Открыть каталог</a>
+          </div>
+        </section>
+
+        <section class="popular-items">
+          <div class="items-header">
+            <h2>Популярные товары</h2>
+            <a href="#" class="items-btn">Все популярные товары</a>
+          </div>
+          <div class="items-gallery">
+            <article class="item">
+              <div class="items-order-btn">
+                <a href="#">Купить</a>
+                <a href="#">В закладки</a>
+              </div>
+              <img src="#" alt="BOSCH BFG 9000">
+              <h4>Перфоратор BOSCH BFG 9000</h4>
+              <span class="old-price">32500</span>
+              <span class="new-price">25500</span>
+            </article>
+            <article class="item">
+              <div class="items-order-btn">
+                <a href="#">Купить</a>
+                <a href="#">В закладки</a>
+              </div>
+              <img src="#" alt="BOSCH BFG 3000">
+              <h4>Перфоратор BOSCH BFG 3000</h4>
+              <span class="old-price">22500</span>
+              <span class="new-price">15500</span>
+            </article>
+            <article class="item">
+              <div class="items-order-btn">
+                <a href="#">Купить</a>
+                <a href="#">В закладки</a>
+              </div>
+              <img src="#" alt="BOSCH BFG 6000">
+              <h4>Перфоратор BOSCH BFG 6000</h4>
+              <span class="old-price">30500</span>
+              <span class="new-price">25500</span>
+            </article>
+            <article class="item">
+              <div class="items-order-btn">
+                <a href="#">Купить</a>
+                <a href="#">В закладки</a>
+              </div>
+              <img src="#" alt="BOSCH BFG 2000">
+              <h4>Перфоратор BOSCH BFG 2000</h4>
+              <span class="old-price"></span>
+              <span class="new-price">12500</span>
+            </article>
+          </div>
+        </section>
+
+        <section class="popular-brands">
+          <div class="brands-header">
+            <h2>Популярные производители</h2>
+            <a href="#" class="brands-btn">Все производители</a>
+          </div>
+<!-- Стоит ли оставить список с брэндами или слишком много вложенности получается?
+     Может вместо ul лучше div и просто ссылки без li? -->
+          <ul class="brands-list">
+            <li><a href="#"><img src="" alt="BOSCH"></a></li>
+            <li><a href="#"><img src="" alt="Makita"></a></li>
+            <li><a href="#"><img src="" alt="DeWALT"></a></li>
+            <li><a href="#"><img src="" alt="Интерскол"></a></li>
+            <li><a href="#"><img src="" alt="Hitachi"></a></li>
+            <li><a href="#"><img src="" alt="LG"></a></li>
+            <li><a href="#"><img src="" alt="AEG"></a></li>
+            <li><a href="#"><img src="" alt="Metabo"></a></li>
+          </ul>
+        </section>
+      </div>
+
+      <section class="service">
+        <div class="container">
+          <h2>Сервисы</h2>
+          <p>Хороший интернет-магазин отличается от плохого не только ценами!<br>
+             Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
+<!-- Нужен ли список и ссылки? -->
+          <div class="services-slider">
+            <div class="slider-menu">
+              <ul>
+                <li><a href="#">Доставка</a></li>
+                <li><a href="#">Гарантия</a></li>
+                <li><a href="#">Кредит</a></li>
+              </ul>
+            </div>
+            <div class="slider-features">
+              <h2>Доставка</h2>
+              <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо хзаработаем, поднимая его на ваш этаж!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+<!-- Можно ли объединить классы about и container в одном месте, как сейчас? Ведь фон будет все равно белым -->
+      <section class="about container">
+        <div class="about-description">
+          <h2>Компания "Техномарт"</h2>
+          <p>Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта
+            и строительства не оставит равнодушными любителей сэкномить на гастарбайтерах.</p>
+          <p>Мы можем доставить ваш товар в самые отдаленные точки России!
+            Техномарт работает со многими транспортными компаниями:</p>
+          <ul>
+            <li>Деловые линии</li>
+            <li>Автотрейдинг</li>
+            <li>ЖелДорЭкспедиция</li>
+          </ul>
+          <a href="#" class="more-about-btn">Подробнее о компании</a>
+        </div>
+        <div class="about-contacts">
+          <p>Вы можете забрать товар сами, заехав в наш офис:</p>
+          <a href="#"><img src="" alt="г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8"></a>
+          <a href="#" class="contact-btn">Заблудились? Напишите нам!</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <div class="footer-top">
+        <div class="container">
+          <a href="#">Техномарт</a>
+          <nav class="footer-main-menu">
+            <ul>
+              <li><a href="#">Компания</a></li>
+              <li><a href="#">Новости</a></li>
+              <li><a href="catalog.html">Каталог</a></li>
+              <li><a href="#">Доставка</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
+          </nav>
+          <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
+<!-- Стоит ли прописывать и nav и ul? Может лучше что-то одно? -->
+          <nav class="footer-catalog-menu">
+            <ul>
+              <li><a href="#">Материалы</a></li>
+              <li><a href="#">Техника</a></li>
+              <li><a href="#">Инструменты</a></li>
+              <li><a href="#">Спецпредложения</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
       <div class="footer-bottom">
-        <p class="footer-copyright">© 2010–2017 Компания «Техномарт»<br>Все права защищены</p>
-        <div class="social-block">
-          <a class="social-btn" href="https://vk.com/htmlacademy">Вконтакте</a>
-          <a class="social-btn" href="https://facebook.com/htmlacademy">Фейсбук</a>
-          <a class="social-btn" href="https://instagram.com/htmlacademy">Инстаграм</a>
-        </div>
-        <div class="feedback">
-          Обратная связь:
-          <a href="#">mail@htmlacademy.ru</a>
-        </div>
-        <div class="htmlacademy-copyright">
-          Разработано -
-          <a href="https://htmlacademy.ru">htmlacademy.ru</a>
+        <div class="container">
+          <p class="footer-copyright">© 2010–2017 Компания «Техномарт»<br>Все права защищены</p>
+          <div class="social-block">
+            <a class="social-btn-vk" href="https://vk.com/htmlacademy">Вконтакте</a>
+            <a class="social-btn-fb" href="https://facebook.com/htmlacademy">Фейсбук</a>
+            <a class="social-btn-in" href="https://instagram.com/htmlacademy">Инстаграм</a>
+          </div>
+          <div class="feedback">
+            Обратная связь:
+            <a href="#">mail@htmlacademy.ru</a>
+          </div>
+          <div class="designed-by">
+            Разработано -
+            <a href="https://htmlacademy.ru">htmlacademy.ru</a>
+          </div>
         </div>
       </div>
     </footer>
+
+<!-- Может ли кнопка закрытия a быть внутри формы? Или лучше вынести ее вне и весь блок обернуть в див? -->
+    <form class="feedback-form" action="://echo.htmlacademy.ru" method="post">
+      <a href="#" class="close-btn"></a>
+      <labeluser-name for="">Ваше имя:</label>
+      <input type="text" name="user-name" value="Представьтесь, пожалуйста" required>
+      <label for="email">Ваш e-mail:</label>
+      <input type="email" name="email" value="Для отправки ответа" required><br>
+      <label for="mail-field">Текст письма:</label>
+      <textarea name="mail-field" rows="8" cols="80">В свободной форме</textarea>
+      <input type="submit" name="mail-submit" value="Отправить">
+    </form>
+
   </body>
 </html>
