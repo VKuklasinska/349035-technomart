@@ -3,7 +3,7 @@ body {
   padding: 0;
   font-size: 18px;
   line-height: 24px;
-  font-family: "PT Sans", "Cuprum", sans-serif;
+  font-family: "Cuprum", "PT Sans", sans-serif;
   color: #000000;
   background-color: white;
 }
@@ -35,4 +35,60 @@ h4 {
 
 .categories {
   background-color: grey;
+}
+
+.header-top {
+  background-color: #33445a;
+  height: 42px;
+}
+
+.container {
+  width: 940px;
+  margin: auto;
+}
+
+.header-top a,
+.header-top form {
+  display: inline-block;
+}
+
+.header-logo {
+  height: 42px;
+  width: 220px;
+  background-color: #ff5357;
+  box-shadow: 0 5px #c23f42;
+  line-height: 42px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 24px;
+  text-align: center;
+  font-family: "Cuprum", sans-serif;
+}
+
+.header-top .bookmarks,
+.header-top .cart,
+.header-top .order-btn {
+  text-decoration: none;
+  color: white;
+  font-size: 17px;
+  line-height: 42px;
+}
+
+.header-top .order-btn {
+  height: 42px;
+  width: 150px;
+  background-color: #6db254;
+  text-align: center;
+}
+
+.main-menu ul {
+  list-style: none;
+  background-color: #33445a;
+}
+
+.main-menu a {
+  text-decoration: none;
+  color: white;
+  font-size: 17px;
+  line-height: 55px;
 }
