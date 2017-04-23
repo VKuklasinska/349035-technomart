@@ -34,8 +34,8 @@
               <a href="#" class="user-name">Равшан Джамшутович</a>
               <a href="#" class="user-logout">Выйти</a>
             </div>
-            <a href="#">Мои заказы</a>
-            <a href="#">Личный кабинет</a>
+            <a class="my-orders" href="#">Мои заказы</a>
+            <a class="personal" href="#">Личный кабинет</a>
           </div>
         </div>
         <nav class="main-nav container">
@@ -52,20 +52,24 @@
       </div>
     </header>
 
-    <main class="container">
+    <main class="container clearfix">
       <div class="breadcrumbs">
         <a href="#">Главная</a>
         <a href="#">Каталог</a>
         <a href="#">Инструмент</a>
         <a href="#">Перфораторы</a>
       </div>
-      <h2 class="main-heading">Перфораторы</h2>
+      <h2 class="catalog-main-heading">Перфораторы</h2>
       <aside class="filters">
-        <span>Фильтр:</span>
+        <span class="filters-heading">Фильтр:</span>
         <form action="://echo.htmlacademy.ru" method="get">
           <fieldset class="filter-price">
             <legend>Цена:</legend>
-            <div class="range"></div>
+            <div class="range">
+              <div class="range-line"></div>
+              <div class="range-min"></div>
+              <div class="range-max"></div>
+            </div>
             <input type="text" name="price-min" value="0"> -
             <input type="text" name="price-max" value="30000">
           </fieldset>
@@ -111,9 +115,9 @@
         </form>
       </aside>
 
-      <section class="gallery">
-        <div class="gallery-header">
-          <span>Сортировка:</span>
+      <section class="main-gallery">
+        <div class="gallery-sorting">
+          <span class="gallery-sorting-name">Сортировка:</span>
           <a href="#">По цене</a>
           <a href="#">По типу</a>
           <a href="#">По функционалу</a>
@@ -213,17 +217,17 @@
         </article>
 
         <div class="pagination">
-          <a href="#" class="active">1</a>
-          <a href="#">2</a>
-          <a href="#">3</a>
-          <a href="#">Следующая</a>
+          <a class="pagination-page-number active" href="#" class="active">1</a>
+          <a class="pagination-page-number" href="#">2</a>
+          <a class="pagination-page-number" href="#">3</a>
+          <a class="pagination-next-page" href="#">Следующая</a>
         </div>
       </section>
     </main>
 
     <section class="category-info">
       <div class="container">
-        <h2>Пара слов о перфораторах</h2>
+        <h2 class="category-info-heading">Пара слов о перфораторах</h2>
         <p>Перфоратор — универсальный строительный инструмент. Предназначен для сверления и долбления отверстий в кирпиче, бетоне и камне.
           Существуют электромеханические и пневматические перфораторы. Современные модели могут выполнять функции дрели, шуруповерта и отбойного молотка. В ассортиментном ряду есть выбор «трехрежимников»: в одном устройстве будут совмещены отбойный молоток и ударная дрель.</p>
       </div>

@@ -1,3 +1,7 @@
+/* При масштабировании сайта в браузере
+  карточки Популярных товаров и производителей
+  перескакивают на новые строки */
+
 body {
   margin: 0;
   padding: 0;
@@ -18,17 +22,14 @@ body {
 .popular-items-heading,
 .service-heading,
 .firm-name,
-.contacts-heading {
+.contacts-heading,
+.catalog-main-heading,
+.category-info-heading {
   font-family: Cuprum, sans-serif;
   font-size: 30px;
   font-weight: normal;
-  line-height: 38px;
   text-transform: uppercase;
   margin: 0;
-}
-
-.main-header {
-  margin-bottom: 59px;
 }
 
 .header-top {
@@ -196,6 +197,7 @@ body {
 
 .categories {
   font-size: 0;
+  margin-top: 59px;
 }
 
 /* Не совсем понятно, когда нужно задавать высоту, а когда нет. Или вообще не нужно?
@@ -525,6 +527,10 @@ body {
   display: none;
 }
 
+.about {
+  margin-bottom: 86px;
+}
+
 .about-description {
   float: left;
   width: 519px;
@@ -547,10 +553,6 @@ body {
   font-size: 18px;
   margin: 0;
   padding: 0;
-}
-
-.main-footer {
-  margin-top: 86px;
 }
 
 .about-description-content,
@@ -717,4 +719,195 @@ body {
   text-decoration: none;
   color: #ffda96;
   font-size: 16px;
+}
+
+/*Часть для каталога*/
+
+.user-block-name {
+  width: 299px;
+  background-color: #ffffff;
+}
+
+.user-name,
+.user-logout {
+  text-decoration: none;
+  font-size: 21px;
+  color: #000000;
+  line-height: 45px;
+}
+
+.my-orders,
+.personal {
+  font-size: 16px;
+  color: #32425c;
+}
+
+.breadcrumbs {
+  min-height: 59px;
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-family: "PT Sans", sans-serif;
+  line-height: 59px;
+  color: #000000;
+}
+
+.catalog-main-heading {
+  display: block;
+  line-height: 89px;
+  color: #32425c;
+  padding-left: 30px;
+  background-color: #f2f6f8;
+  margin-bottom: 20px;
+}
+
+.filters {
+  float: left;
+  width: 220px;
+  margin-right: 20px;
+}
+
+.filter-price,
+.filter-brand,
+.filter-power {
+  margin: 0;
+  border: none;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0;
+/* Padding-top почему-то не срабатывает, а bottom работает,
+  чтобы отодвинуть текст от разделительной линии */
+  padding-bottom: 25px;
+}
+
+.filter-power {
+  border-bottom: none;
+}
+
+.range {
+  background-color: #f7f3ec;
+  height: 80px;
+  margin-bottom: 9px;
+}
+
+.filter-brand ul,
+.filter-power ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.filters legend {
+  font-size: 17px;
+  font-family: "PT Sans", sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+
+/* Как задать стиль для текста чекбоксов и радио?
+  Что-то не срабатывает. */
+.filter-brand input[type="checkbox"],
+.filter-power input[type="radio"] {
+  font-size: 15px;
+  font-family: "PT Sans", sans-serif;
+  text-transform: uppercase;
+}
+
+.main-gallery {
+  float: right;
+  width: 700px;
+  font-size: 0;
+  margin-bottom: 60px;
+}
+
+.gallery-sorting,
+.filters-heading {
+  font-size: 0px;
+  font-family: "PT Sans", sans-serif;
+  text-transform: uppercase;
+  background-color: #f7f3ec;
+  margin-bottom: 21px;
+  padding-left: 19px;
+}
+
+.gallery-sorting-name,
+.filters-heading {
+  font-size: 13px;
+  line-height: 38px;
+}
+
+.filters-heading {
+  display: block;
+}
+
+.gallery-sorting a {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 13px;
+  line-height: 16px;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px dotted #ee3643;
+  margin-top: 11px;
+}
+
+.main-gallery .gallery-item {
+  margin-right: 20px;
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+
+.main-gallery .gallery-item:nth-of-type(3n) {
+  margin-right: 0px;
+}
+
+.pagination {
+  font-size: 0;
+  margin-top: 32px;
+}
+
+.pagination-page-number,
+.pagination-next-page {
+  display: inline-block;
+  vertical-align: top;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000000;
+  text-align: center;
+  font-size: 13px;
+  font-family: "PT Sans", sans-serif;
+  line-height: 38px;
+  width: 36px;
+  border-radius: 2px;
+  border: 1px solid #e5e5e5;
+  margin-right: 10px;
+}
+
+.pagination-next-page {
+  min-width: 138px;
+}
+
+.pagination .active {
+  border: 1px solid #ee3643;
+  background-color: #ee3643;
+  color: #ffffff;
+}
+
+.category-info {
+  background-color: #f2f6f8;
+  padding: 65px 0;
+}
+
+.category-info-heading {
+  color: #32425c;
+  margin-bottom: 29px;
+}
+
+.category-info p {
+  margin: 0;
+  font-family: "PT Sans", sans-serif;
+  font-size: 13px;
 }
