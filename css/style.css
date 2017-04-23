@@ -1,58 +1,45 @@
 body {
   margin: 0;
   padding: 0;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 24px;
   font-family: "Cuprum", "PT Sans", sans-serif;
   color: #000000;
   background-color: white;
 }
 
-h2 {
+.container {
+  width: 940px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.popular-brands-heading,
+.popular-items-heading,
+.service-heading,
+.firm-name,
+.contacts-heading {
   font-family: Cuprum, sans-serif;
   font-size: 30px;
   font-weight: normal;
   line-height: 38px;
-  color: #3d546e;
   text-transform: uppercase;
+  margin: 0;
 }
 
-h3 {
-  font-family: Cuprum, sans-serif;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 30px;
-  color: #ffffff;
-}
-
-h4 {
-  font-family: PT Sans, sans-serif;
-  font-size: 18px;
-  font-weight: bold;
-  line-height: 20px;
-  color: #000000;
-}
-
-.categories {
-  background-color: grey;
+.main-header {
+  margin-bottom: 59px;
 }
 
 .header-top {
   background-color: #33445a;
   height: 42px;
-}
-
-.container {
-  width: 940px;
-  margin: auto;
-}
-
-.header-top a,
-.header-top form {
-  display: inline-block;
+  font-size: 0;
 }
 
 .header-logo {
+  display: inline-block;
+  vertical-align: top;
   height: 42px;
   width: 220px;
   background-color: #ff5357;
@@ -65,30 +52,669 @@ h4 {
   font-family: "Cuprum", sans-serif;
 }
 
-.header-top .bookmarks,
-.header-top .cart,
-.header-top .order-btn {
-  text-decoration: none;
-  color: white;
+.header-bookmarks,
+.header-cart,
+.header-order-btn {
+  display: inline-block;
+  vertical-align: top;
   font-size: 17px;
+  color: #ffffff;
+  text-decoration: none;
   line-height: 42px;
 }
 
-.header-top .order-btn {
+.header-search-form {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.header-order-btn {
   height: 42px;
   width: 150px;
   background-color: #6db254;
   text-align: center;
 }
 
-.main-menu ul {
+.header-bookmarks,
+.header-cart {
+  height: 42px;
+  width: 150px;
+  text-align: center;
+}
+
+.header-bottom {
+  background-color: #f3f7f9;
+  padding-top: 46px;
+  padding-bottom: 65px;
+}
+
+.header-start-info {
+  margin-bottom: 43px;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.header-firm-description {
+  float: left;
+  width: 198px;
+  padding-left: 53px;
+  margin-right: 69px;
+  margin-top: 0;
+  font-size: 16px;
+  line-height: 23px;
+  font-style: italic;
+  color: #ff5357;
+}
+
+.header-contacts {
+  float: left;
+  width: 270px;
+  margin-right: 69px;
+}
+
+.header-tel {
+  display: inline-block;
+  width: 264px;
+  height: 39px;
+  border: 3px solid #ffffff;
+  text-decoration: none;
+  color: #fb463c;
+  font-size: 21px;
+  line-height: 39px;
+  text-align: center;
+  margin-bottom: 9px;
+}
+
+.header-contacts-address {
+  font-size: 14px;
+  color: #3d546e;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+/* Не сходится математика, в чем проблема? Ширина дива 281px.
+  Кнопка Войти - 121, Регистр. - 150
+  Расстояние между ними должно быть 10! Но кнопки становятся в ряд только при 5px. */
+.user-block {
+  float: right;
+  width: 281px;
+}
+
+.user-block-login,
+.user-block-registration {
+  display: inline-block;
+  background-color: #ffffff;
+  height: 45px;
+  text-decoration: none;
+  font-size: 21px;
+  line-height: 45px;
+  color: #000000;
+}
+
+.user-block-login {
+  min-width: 121px;
+  text-align: center;
+  margin-right: 5px;
+}
+
+.user-block-registration {
+  min-width: 150px;
+  text-align: center;
+}
+
+/* Как сделать отступы справа и слева в полосе меню?
+  Крайние кнопки в состоянии фокуса захватывают все до краев меню?
+  Отступ от средней части шапки до меню не получается... Как сделать? 43px*/
+.main-menu {
+  margin: 0 auto;
   list-style: none;
-  background-color: #33445a;
+  padding: 0;
+  background-color: #3d546e;
+  box-shadow: 0 5px #33445a;
+  font-size: 0;
+}
+
+.main-menu li {
+  display: inline-block;
+  margin-right: 0;
+  font-size: 17px;
 }
 
 .main-menu a {
+  display: block;
+  padding: 0 31px;
   text-decoration: none;
   color: white;
   font-size: 17px;
   line-height: 55px;
+}
+
+.categories {
+  font-size: 0;
+}
+
+/* Не совсем понятно, когда нужно задавать высоту, а когда нет. Или вообще не нужно?
+
+  Третий блок не совсем точно прилегает к правому краю сайта (подбирала margin-left для
+  блочно-строчных элементов).
+
+  Чтобы на блочно-строчных построить, пришлось слайдер между категориями
+  вставить в HTML разметке. Как с этим жить? :) */
+.category-block {
+  display:inline-block;
+  vertical-align: top;
+  position: relative;
+  padding-left: 23px;
+  padding-top: 23px;
+  width: 277px;
+  height: 100px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.category-materials {
+  background-color: #ffbf47;
+  margin-left: 0;
+}
+
+.category-instruments {
+  background-color: #3bbce3;
+}
+
+.category-tech {
+  background-color: #dc91d8;
+}
+
+.category-discount {
+  background-color: #8ed78f;
+  margin-left: 0;
+}
+
+.category-delivery {
+  background-color: #ffc047;
+  margin-bottom: 0;
+  margin-left: 0;
+}
+
+.category-name {
+  font-family: Cuprum, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 30px;
+  color: #ffffff;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 12px;
+}
+
+.category-slider {
+  float: left;
+  width: 620px;
+  height: 266px;
+  background-color: #493f40;
+  margin-bottom: 0;
+  margin-right: 20px;
+  font-size: 14px;
+  background-image: url("../img/slider-2.jpg");
+}
+
+.category-slider-two {
+  display: none;
+}
+
+/* Куда картинка вставляется в слайдерах? Не видно ее сейчас почему-то */
+.category-slider-two {
+  background-repeat: no-repeat;
+}
+
+.category-block a {
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 38px;
+  width: 135px;
+  height: 38px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+}
+
+.category-pic {
+  position: absolute;
+  top: 22px;
+  right: 25px;
+  background: url("") no-repeat 0 0;
+  width: 82px;
+  height: 79px;
+}
+
+.category-pic-1 {
+  background-position: ;
+}
+
+.category-pic-2 {
+  background-position: ;
+}
+
+.category-pic-3 {
+  background-position: ;
+}
+
+.category-pic-4 {
+  background-position: ;
+}
+
+.category-pic-5 {
+  background-position: ;
+}
+
+.categories {
+  margin-bottom: 53px;
+}
+
+.popular-items {
+  margin-bottom: 21px;
+}
+
+.popular-items-header,
+.popular-brands-header {
+  margin-bottom: 20px;
+  background-color: #f9f5f0;
+  padding-left: 30px;
+  padding-right: 24px;
+  font-size: 0;
+}
+
+/* Нормальная ли это практика задавать однострочным текстовым блокам
+  line-height как высоту всего общего блока?
+  Или лучше высоту блока определять как line-height + отступы сверху и снизу? */
+.popular-items-heading,
+.popular-brands-heading {
+  display: inline-block;
+  vertical-align: middle;
+  color: #3d546e;
+  line-height: 89px;
+  width: 600px;
+  margin-right: 33px;
+}
+
+.popular-items-btn,
+.popular-brands-btn {
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 14pt;
+  text-transform: uppercase;
+  line-height: 38px;
+  min-width: 253px;
+  text-align: center;
+  background-color: #ff5357;
+  border-radius: 2px;
+}
+
+.gallery {
+  font-size: 0;
+  margin-bottom: 21px;
+}
+
+.gallery-item {
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid #eaeaea;
+  width: 218px;
+  min-height: 316px;
+  font-size: 0;
+  margin-right: 20px;
+  text-align: center;
+}
+
+.items-order-btn {
+  font-size: 17px;
+}
+
+.gallery-item:last-child {
+  margin-right: 0;
+}
+
+.item-name {
+  font-family: PT Sans, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #000000;
+  width: 180px;
+  margin: 0 auto;
+}
+
+.old-price {
+  display: inline-block;
+  vertical-align: top;
+  font-family: PT Sans, sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  text-decoration: line-through;
+  line-height: 18px;
+  color: #a9a9a9;
+  width: 180px;
+}
+
+.new-price {
+  display: inline-block;
+  vertical-align: top;
+  font-family: PT Sans, sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 38px;
+  color: #ffffff;
+  text-align: center;
+  width: 141px;
+
+  background-color: #ff5357;
+}
+
+.brands-list {
+  font-size: 0;
+  margin-bottom: 65px;
+}
+
+.brand {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 17px;
+  border: 1px solid #eaeaea;
+  width: 218px;
+  min-height: 143px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  line-height: 143px;
+}
+
+.brand:nth-child(4n) {
+  margin-right: 0;
+}
+
+.brand img {
+  vertical-align: middle;
+}
+
+.service {
+  background-color: #f4f8f9;
+  padding-top: 64px;
+/* Какой тут будет отступ снизу? До куда считать? */
+  padding-bottom: 54px;
+  margin-bottom: 80px;
+}
+
+.slider-paragraph,
+.service-paragraph {
+  font-family: PT Sans, sans-serif;
+  font-size: 13px;
+  margin: 0;
+}
+
+.service-paragraph {
+  margin-bottom: 71px;
+}
+
+.service-heading {
+  margin-bottom: 27px;
+}
+
+.service-slider-title {
+  text-transform: uppercase;
+  font-size: 36px;
+  line-height: 40px;
+  color: #3d546e;
+  margin: 0;
+  margin-bottom: 27px;
+}
+
+.service-slider-nav ul {
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 240px;
+  margin-right: 80px;
+}
+
+.service-slider-nav li {
+  display: block;
+  width: 217px;
+  box-shadow: inset 0 -1px 0 0 #33445a,
+              inset 0 1px 0 0 #4e637c;
+  background-color: #3d546e;
+  font-size: 21px;
+  line-height: 61px;
+  color: #ffffff;
+  padding-left: 23px;
+}
+
+.service-slider-features {
+  float: left;
+  width: 379px;
+}
+
+/* Как определить ширину параграфа, если в макете они все разные для каждого слайдера? */
+.service-slider-paragraph {
+  width: 380px;
+}
+
+.service-slider-one {
+  width: 620px;
+/* Куда вставить картинку, чтобы она с каждым новым слайдером менялась? */
+  background-image: url("../img/service-1.png");
+  background-repeat: no-repeat;
+}
+
+.service-slider-two {
+  display: none;
+}
+
+.service-slider-three {
+  display: none;
+}
+
+.about-description {
+  float: left;
+  width: 519px;
+  margin-right: 120px;
+}
+
+.about-contacts {
+  float: right;
+  width: 301px;
+}
+
+.about-description p,
+.about-contacts p {
+  font-size: 13px;
+  font-family: "PT Sans", sans-serif;
+}
+
+.about-description ul {
+  list-style: none;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.main-footer {
+  margin-top: 86px;
+}
+
+.about-description-content,
+.about-contacts-content {
+  min-height: 237px;
+  margin-bottom: 40px;
+}
+
+.more-about-btn,
+.contact-btn {
+  display: inline-block;
+  vertical-align: top;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ffffff;
+  line-height: 38px;
+  background-color: #ff5357;
+  border-radius: 2px;
+}
+
+.more-about-btn {
+  min-width: 220px;
+}
+
+.contact-btn {
+  min-width: 300px;
+}
+
+.footer-top {
+  background-color: #3d546e;
+  padding-bottom: 28px;
+}
+
+.footer-top-first-line {
+  margin-bottom: 28px;
+}
+
+.footer-logo {
+  display: block;
+  float: left;
+  height: 63px;
+  width: 220px;
+  background-color: #ff5357;
+  box-shadow: 0 5px #c23f42;
+  line-height: 63px;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 30px;
+  text-align: center;
+  font-family: "Cuprum", sans-serif;
+}
+
+.footer-main-nav {
+  float: right;
+}
+
+.footer-main-menu {
+  font-size: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-main-menu a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #ffffff;
+  line-height: 68px;
+}
+
+.footer-main-menu li {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 30px;
+  vertical-align: top;
+  font-size: 18px;
+}
+
+.footer-main-menu li:last-child {
+  padding-right: 0px;
+}
+
+.footer-top-second-line {
+  min-height: 65px;
+}
+
+.footer-address {
+  float: left;
+  margin: 0;
+  font-size: 18px;
+  color: #ffffff;
+  width: 322px;
+}
+
+.footer-nav {
+  float: right;
+}
+
+.footer-menu {
+  font-size: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Как выравнить текст меню по верху с адресом? */
+.footer-menu a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #ffd180;
+  line-height: 50px;
+}
+
+.footer-menu li {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 30px;
+  vertical-align: top;
+  font-size: 18px;
+}
+
+.footer-menu li:last-child {
+  padding-right: 0px;
+}
+
+.footer-bottom {
+  background-color: #33445b;
+  padding: 35px 0;
+}
+
+.footer-copyright {
+  margin: 0;
+  float: left;
+  width: 227px;
+  font-size: 16px;
+  color: #ffffff;
+  margin-right: 162px;
+}
+
+.social-block {
+  float: left;
+  margin-right: 120px;
+  font-size: 4px;
+}
+
+.feedback {
+  float: left;
+  width: 135px;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.designed-by {
+  float: right;
+  width: 110px;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.designed-by a,
+.feedback a {
+  text-decoration: none;
+  color: #ffda96;
+  font-size: 16px;
 }

@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Техномарт</title>
+    <!-- <link rel="stylesheet" href="css/normalize.css"> -->
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -10,32 +11,31 @@
       <div class="header-top">
         <div class="container">
           <a class="header-logo">Техномарт</a>
-          <form action="://echo.htmlacademy.ru" method="post">
-<!-- Можно ли использовать input type="image" для кнопки поисковика? -->
+          <form class="header-search-form" action="://echo.htmlacademy.ru" method="post">
             <input type="submit" name="search-btn">
             <input type="search" name="search" placeholder="Поиск:">
           </form>
-          <a href="#" class="bookmarks">Закладки:<span class="bookmarks-nbr">0</span></a>
-          <a href="#" class="cart">Корзина:<span class="items-nbr">0</span></a>
-          <a class="order-btn" href="#">Оформить заказ</a>
+          <a href="#" class="header-bookmarks">Закладки:<span class="bookmarks-nbr"> 0</span></a>
+          <a href="#" class="header-cart">Корзина:<span class="items-nbr"> 0</span></a>
+          <a class="header-order-btn" href="#">Оформить заказ</a>
         </div>
       </div>
       <div class="header-bottom">
-        <div class="container">
-          <p>Интернет-магазин строительных материалов и инструментов для ремонта</p>
+        <div class="header-start-info container clearfix">
+          <p class="header-firm-description">Интернет-магазин строительных материалов и инструментов для ремонта</p>
           <div class="header-contacts">
             <a href="tel:+78125550555" class="header-tel">
               +7 (812) 555 05 55
             </a>
-            <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
+            <p class="header-contacts-address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
           </div>
           <div class="user-block">
-            <a href="#">Войти</a>
-            <a href="#">Регистрация</a>
+            <a href="#" class="user-block-login">Войти</a>
+            <a href="#" class="user-block-registration">Регистрация</a>
           </div>
         </div>
-        <nav class="main-menu container">
-          <ul>
+        <nav class="main-nav container">
+          <ul class="main-menu">
             <li><a href="index.html">Главная</a></li>
             <li><a href="#">Компания</a></li>
             <li><a href="catalog.html">Каталог</a></li>
@@ -50,89 +50,89 @@
 
     <main>
       <div class="container">
-        <section class="categories">
-          <div class="category-materials new">
-            <h3>Материалы</h3>
+        <section class="categories clearfix">
+          <div class="category-block category-materials new">
+<!-- А может тут должно быть h2?, а не h3 -->
+            <h3 class="category-name">Материалы</h3>
             <a href="#">На любой вкус</a>
-            <div class="category-pic"></div>
+            <div class="category-pic category-pic-1"></div>
           </div>
-          <div class="category-instruments">
-            <h3>Инструмент</h3>
+          <div class="category-block category-instruments">
+            <h3 class="category-name">Инструмент</h3>
             <a href="#">На все случаи</a>
-            <div class="category-pic"></div>
+            <div class="category-pic category-pic-2"></div>
           </div>
-          <div class="category-tech">
-            <h3>Техника</h3>
+          <div class="category-block category-tech">
+            <h3 class="category-name">Техника</h3>
             <a href="#">Для стройки</a>
-            <div class="category-pic"></div>
-          </div>
-          <div class="category-discount">
-            <h3>Скидки 50%</h3>
-            <a href="#">На 350 товаров</a>
-            <div class="category-pic"></div>
-          </div>
-          <div class="category-delivery">
-            <h3>Доставка</h3>
-            <a href="#">Бесплатно</a>
-            <div class="category-pic"></div>
+            <div class="category-pic category-pic-3"></div>
           </div>
           <div class="category-slider">
-            <div class="slider-one">
-<!-- Как разметить текст в слайдере? -->
+            <div class="category-slider-one">
               <p>Дрели</p>
               <p>Соседям на радость!</p>
             </div>
-            <div class="slider-two">
+            <div class="category-slider-two">
               <p>Перфораторы</p>
               <p>Настоящие мужские игрушки</p>
             </div>
             <a href="#" class="open-catalog-btn">Открыть каталог</a>
           </div>
+          <div class="category-block category-discount">
+            <h3 class="category-name">Скидки 50%</h3>
+            <a href="#">На 350 товаров</a>
+            <div class="category-pic category-pic-4"></div>
+          </div>
+          <div class="category-block category-delivery">
+            <h3 class="category-name">Доставка</h3>
+            <a href="#">Бесплатно</a>
+            <div class="category-pic category-pic-5"></div>
+          </div>
         </section>
 
         <section class="popular-items">
-          <div class="items-header">
-            <h2>Популярные товары</h2>
-            <a href="#" class="items-btn">Все популярные товары</a>
+          <div class="popular-items-header">
+            <h2 class="popular-items-heading">Популярные товары</h2>
+            <a href="#" class="popular-items-btn">Все популярные товары</a>
           </div>
-          <div class="items-gallery">
-            <article class="item">
+          <div class="gallery">
+            <article class="gallery-item">
               <div class="items-order-btn">
                 <a href="#">Купить</a>
                 <a href="#">В закладки</a>
               </div>
               <img src="img/snippet-1.jpg" alt="BOSCH BFG 9000">
-              <h4>Перфоратор BOSCH BFG 9000</h4>
+              <h3 class="item-name">Перфоратор BOSCH BFG 9000</h3>
               <span class="old-price">32500 Р.</span>
               <span class="new-price">25500 Р.</span>
             </article>
-            <article class="item">
+            <article class="gallery-item">
               <div class="items-order-btn">
                 <a href="#">Купить</a>
                 <a href="#">В закладки</a>
               </div>
               <img src="img/snippet-2.jpg" alt="BOSCH BFG 3000">
-              <h4>Перфоратор BOSCH BFG 3000</h4>
+              <h3 class="item-name">Перфоратор BOSCH BFG 3000</h3>
               <span class="old-price">22500 Р.</span>
               <span class="new-price">15500 Р.</span>
             </article>
-            <article class="item">
+            <article class="gallery-item">
               <div class="items-order-btn">
                 <a href="#">Купить</a>
                 <a href="#">В закладки</a>
               </div>
               <img src="img/snippet-3.jpg" alt="BOSCH BFG 6000">
-              <h4>Перфоратор BOSCH BFG 6000</h4>
+              <h3 class="item-name">Перфоратор BOSCH BFG 6000</h3>
               <span class="old-price">30500 Р.</span>
               <span class="new-price">25500 Р.</span>
             </article>
-            <article class="item">
+            <article class="gallery-item">
               <div class="items-order-btn">
                 <a href="#">Купить</a>
                 <a href="#">В закладки</a>
               </div>
-              <img src="img/snippet-4.jpg" alt="BOSCH BFG 2000">
-              <h4>Перфоратор BOSCH BFG 2000</h4>
+              <img src="img/snippet-2.jpg" alt="BOSCH BFG 2000">
+              <h3 class="item-name">Перфоратор BOSCH BFG 2000</h3>
               <span class="old-price"></span>
               <span class="new-price">12500 Р.</span>
             </article>
@@ -140,76 +140,83 @@
         </section>
 
         <section class="popular-brands">
-          <div class="brands-header">
-            <h2>Популярные производители</h2>
-            <a href="#" class="brands-btn">Все производители</a>
+          <div class="popular-brands-header">
+            <h2 class="popular-brands-heading">Популярные производители</h2>
+            <a href="#" class="popular-brands-btn">Все производители</a>
           </div>
-<!-- Стоит ли оставить список с брэндами или слишком много вложенности получается?
-     Может вместо ul лучше div и просто ссылки без li? -->
-          <ul class="brands-list">
-            <li><a href="#"><img src="img/logo-1.png" alt="BOSCH"></a></li>
-            <li><a href="#"><img src="img/logo-2.png" alt="Makita"></a></li>
-            <li><a href="#"><img src="img/logo-3.png" alt="DeWALT"></a></li>
-            <li><a href="#"><img src="img/logo-4.png" alt="Интерскол"></a></li>
-            <li><a href="#"><img src="img/logo-5.png" alt="Hitachi"></a></li>
-            <li><a href="#"><img src="img/logo-6.png" alt="LG"></a></li>
-            <li><a href="#"><img src="img/logo-7.png" alt="AEG"></a></li>
-            <li><a href="#"><img src="img/logo-8.png" alt="Metabo"></a></li>
-          </ul>
+          <div class="brands-list">
+            <a href="#" class="brand"><img src="img/logo-1.png" alt="BOSCH"></a>
+            <a href="#" class="brand"><img src="img/logo-2.png" alt="Makita"></a>
+            <a href="#" class="brand"><img src="img/logo-3.png" alt="DeWALT"></a>
+            <a href="#" class="brand"><img src="img/logo-4.png" alt="Интерскол"></a>
+            <a href="#" class="brand"><img src="img/logo-5.png" alt="Hitachi"></a>
+            <a href="#" class="brand"><img src="img/logo-6.png" alt="LG"></a>
+            <a href="#" class="brand"><img src="img/logo-7.png" alt="AEG"></a>
+            <a href="#" class="brand"><img src="img/logo-8.png" alt="Metabo"></a>
+          </div>
         </section>
       </div>
 
       <section class="service">
-        <div class="container">
-          <h2>Сервисы</h2>
-          <p>Хороший интернет-магазин отличается от плохого не только ценами!<br>
+        <div class="container clearfix">
+          <h2 class="service-heading">Сервисы</h2>
+          <p class="service-paragraph">Хороший интернет-магазин отличается от плохого не только ценами!<br>
              Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
-<!-- Нужен ли список и ссылки? -->
           <div class="services-slider">
-            <div class="slider-menu">
+            <div class="service-slider-nav">
               <ul>
-                <li><a href="#">Доставка</a></li>
-                <li><a href="#">Гарантия</a></li>
-                <li><a href="#">Кредит</a></li>
+                <li>Доставка</li>
+                <li>Гарантия</li>
+                <li>Кредит</li>
               </ul>
             </div>
-            <div class="slider-features">
-              <div class="slider-one">
-                <h2>Доставка</h2>
-                <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо хзаработаем, поднимая его на ваш этаж!</p>
+            <div class="service-slider-features">
+              <div class="service-slider-one">
+                <h3 class="service-slider-title">Доставка</h3>
+                <p class="service-slider-paragraph">Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо хзаработаем, поднимая его на ваш этаж!</p>
               </div>
-              <div class="slider-two">
-                <h2>Гарантия</h2>
-                <p>Если купленный у нас товар поломается или заискрит, а также в случае пожара, спровоцированного его возгаранием, вы всегда можете быть уверены в нашей гарантии. Мы обменяем сгоревший товар на новый.
+              <div class="service-slider-two">
+                <h3 class="service-slider-title">Гарантия</h3>
+                <p class="service-slider-paragraph">Если купленный у нас товар поломается или заискрит, а также в случае пожара, спровоцированного его возгаранием, вы всегда можете быть уверены в нашей гарантии. Мы обменяем сгоревший товар на новый.
                   Дом уж восстановите как-нибудь сами.</p>
               </div>
-              <div class="slider-three">
-                <h2>Кредит</h2>
-                <p>Залезть в долговую яму стало проще! Кредитные консультанты придут вам на помощь.</p>
+              <div class="service-slider-three">
+                <h3 class="service-slider-title">Кредит</h3>
+                <p class="service-slider-paragraph">Залезть в долговую яму стало проще! Кредитные консультанты придут вам на помощь.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
-<!-- Можно ли объединить классы about и container в одном месте, как сейчас? Ведь фон будет все равно белым -->
-      <section class="about container">
+
+      <section class="about container clearfix">
         <div class="about-description">
-          <h2>Компания "Техномарт"</h2>
-          <p>Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта
-            и строительства не оставит равнодушными любителей сэкномить на гастарбайтерах.</p>
-          <p>Мы можем доставить ваш товар в самые отдаленные точки России!
-            Техномарт работает со многими транспортными компаниями:</p>
-          <ul>
-            <li>Деловые линии</li>
-            <li>Автотрейдинг</li>
-            <li>ЖелДорЭкспедиция</li>
-          </ul>
+          <h2 class="firm-name">Компания "Техномарт"</h2>
+          <div class="about-description-content">
+            <p>Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта
+              и строительства не оставит равнодушными любителей сэкномить на гастарбайтерах.</p>
+            <p>Мы можем доставить ваш товар в самые отдаленные точки России!
+              Техномарт работает со многими транспортными компаниями:</p>
+            <ul>
+              <li>Деловые линии</li>
+              <li>Автотрейдинг</li>
+              <li>ЖелДорЭкспедиция</li>
+            </ul>
+          </div>
           <a href="#" class="more-about-btn">Подробнее о компании</a>
         </div>
         <div class="about-contacts">
-          <h2>Контакты</h2>
-          <p>Вы можете забрать товар сами, заехав в наш офис:</p>
-          <a href="#"><img src="img/map.png" alt="г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8"></a>
+          <h2 class="contacts-heading">Контакты</h2>
+<!-- Поставила br в параграфе,
+  ведь нелогично делать его намного короче, чем вся колонка.
+  Текст ведь может измениться.
+
+  Добавила дивы для контента каждого столбика, чтобы задать им мин. высоту
+  и кнопки расположить относительно этих дивов с помощью отступа-->
+          <div class="about-contacts-content">
+            <p>Вы можете забрать товар сами,<br> заехав в наш офис:</p>
+            <a href="#"><img src="img/map.png" alt="г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8"></a>
+          </div>
           <a href="#" class="contact-btn">Заблудились? Напишите нам!</a>
         </div>
       </section>
@@ -218,35 +225,38 @@
     <footer class="main-footer">
       <div class="footer-top">
         <div class="container">
-          <a href="#">Техномарт</a>
-          <nav class="footer-main-menu">
-            <ul>
-              <li><a href="#">Компания</a></li>
-              <li><a href="#">Новости</a></li>
-              <li><a href="catalog.html">Каталог</a></li>
-              <li><a href="#">Доставка</a></li>
-              <li><a href="#">Контакты</a></li>
-            </ul>
-          </nav>
-          <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
-<!-- Стоит ли прописывать и nav, и ul? Может лучше что-то одно? -->
-          <nav class="footer-catalog-menu">
-            <ul>
-              <li><a href="#">Материалы</a></li>
-              <li><a href="#">Техника</a></li>
-              <li><a href="#">Инструменты</a></li>
-              <li><a href="#">Спецпредложения</a></li>
-            </ul>
-          </nav>
+          <div class="footer-top-first-line clearfix">
+            <a class="footer-logo" href="#">Техномарт</a>
+            <nav class="footer-main-nav">
+              <ul class="footer-main-menu">
+                <li><a href="#">Компания</a></li>
+                <li><a href="#">Новости</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="#">Доставка</a></li>
+                <li><a href="#">Контакты</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer-top-second-line clearfix">
+            <p class="footer-address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 +7 (812) 555-05-55</p>
+            <nav class="footer-nav clearfix">
+              <ul class="footer-menu">
+                <li><a href="#">Материалы</a></li>
+                <li><a href="#">Техника</a></li>
+                <li><a href="#">Инструменты</a></li>
+                <li><a href="#">Спецпредложения</a></li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <div class="container">
-          <p class="footer-copyright">© 2010–2017 Компания «Техномарт»<br>Все права защищены</p>
+        <div class="container clearfix">
+          <p class="footer-copyright">© 2010–2017 Компания «Техномарт» Все права защищены</p>
           <div class="social-block">
-            <a class="social-btn-vk" href="https://vk.com/htmlacademy">Вконтакте</a>
-            <a class="social-btn-fb" href="https://facebook.com/htmlacademy">Фейсбук</a>
-            <a class="social-btn-in" href="https://instagram.com/htmlacademy">Инстаграм</a>
+            <a class="social-btn social-btn-vk" href="https://vk.com/htmlacademy">Вконтакте</a>
+            <a class="social-btn social-btn-fb" href="https://facebook.com/htmlacademy">Фейсбук</a>
+            <a class="social-btn social-btn-in" href="https://instagram.com/htmlacademy">Инстаграм</a>
           </div>
           <div class="feedback">
             Обратная связь:
@@ -260,17 +270,27 @@
       </div>
     </footer>
 
-<!-- Может ли кнопка закрытия a быть внутри формы? Или лучше вынести ее вне и весь блок обернуть в див? -->
-    <form class="feedback-form" action="://echo.htmlacademy.ru" method="post">
-      <a href="#" class="close-btn"></a>
-      <labeluser-name for="">Ваше имя:</label>
-      <input type="text" name="user-name" value="Представьтесь, пожалуйста" required>
-      <label for="email">Ваш e-mail:</label>
-      <input type="email" name="email" value="Для отправки ответа" required><br>
-      <label for="mail-field">Текст письма:</label>
-      <textarea name="mail-field" rows="8" cols="80">В свободной форме</textarea>
-      <input type="submit" name="mail-submit" value="Отправить">
-    </form>
+    <div class="form">
+      <button class="close-btn"></button>
+      <form class="feedback-form" action="://echo.htmlacademy.ru" method="post">
+        <label for="user-name">Ваше имя:</label>
+        <input type="text" name="user-name" id="user-name" value="Представьтесь, пожалуйста" required>
+        <label for="email">Ваш e-mail:</label>
+        <input type="email" name="email" id="email" value="Для отправки ответа" required><br>
+        <label for="mail-field">Текст письма:</label>
+        <textarea name="mail-field" id="mail-field" rows="8" cols="80">В свободной форме</textarea>
+        <input type="submit" name="mail-submit" value="Отправить">
+      </form>
+    </div>
+
+    <div class="cart-confirm">
+      <button class="close-btn"></button>
+      <p>Товар добавлен в корзину!</p>
+      <div class="confirm-btns">
+        <a href="#" class="order-confirm-btn">Оформить заказ</a>
+        <a href="#" class="continue-confirm-btn">Продолжить покупки</a>
+      </div>
+    </div>
 
   </body>
 </html>
