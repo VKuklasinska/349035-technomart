@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Техномарт</title>
+    <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700.." rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
@@ -12,8 +13,8 @@
         <div class="container">
           <a class="header-logo">Техномарт</a>
           <form class="header-search-form" action="://echo.htmlacademy.ru" method="post">
-            <input type="submit" name="search-btn">
-            <input type="search" name="search" placeholder="Поиск:">
+            <input class="header-search-btn" type="submit" name="search-btn">
+            <input  type="search" name="search" placeholder="Поиск:">
           </form>
           <a href="#" class="header-bookmarks">Закладки:<span class="bookmarks-nbr"> 0</span></a>
           <a href="#" class="header-cart">Корзина:<span class="items-nbr"> 0</span></a>
@@ -21,21 +22,21 @@
         </div>
       </div>
       <div class="header-bottom">
-        <div class="header-start-info container clearfix">
+        <div class="container clearfix">
           <p class="header-firm-description">Интернет-магазин строительных материалов и инструментов для ремонта</p>
           <div class="header-contacts">
             <a href="tel:+78125550555" class="header-tel">
-              +7 (812) 555 05 55
+              +7 (812) 555-05-55
             </a>
             <p class="header-contacts-address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
           </div>
-          <div class="user-block">
+          <div class="user-block clearfix">
             <a href="#" class="user-block-login">Войти</a>
             <a href="#" class="user-block-registration">Регистрация</a>
           </div>
         </div>
         <nav class="main-nav container">
-          <ul class="main-menu">
+          <ul class="clearfix">
             <li><a href="index.html">Главная</a></li>
             <li><a href="#">Компания</a></li>
             <li><a href="catalog.html">Каталог</a></li>
@@ -52,47 +53,42 @@
       <div class="container">
         <section class="categories clearfix">
           <div class="category-block category-materials new">
-<!-- А может тут должно быть h2?, а не h3 -->
             <h3 class="category-name">Материалы</h3>
             <a href="#">На любой вкус</a>
-            <div class="category-pic category-pic-1"></div>
           </div>
           <div class="category-block category-instruments">
             <h3 class="category-name">Инструмент</h3>
             <a href="#">На все случаи</a>
-            <div class="category-pic category-pic-2"></div>
           </div>
           <div class="category-block category-tech">
             <h3 class="category-name">Техника</h3>
             <a href="#">Для стройки</a>
-            <div class="category-pic category-pic-3"></div>
           </div>
           <div class="category-slider">
             <div class="category-slider-one">
               <p>Дрели</p>
               <p>Соседям на радость!</p>
+              <a href="#" class="open-catalog-btn">Открыть каталог</a>
             </div>
             <div class="category-slider-two">
               <p>Перфораторы</p>
               <p>Настоящие мужские игрушки</p>
+              <a href="#" class="open-catalog-btn">Открыть каталог</a>
             </div>
-            <a href="#" class="open-catalog-btn">Открыть каталог</a>
           </div>
           <div class="category-block category-discount">
             <h3 class="category-name">Скидки 50%</h3>
             <a href="#">На 350 товаров</a>
-            <div class="category-pic category-pic-4"></div>
           </div>
           <div class="category-block category-delivery">
             <h3 class="category-name">Доставка</h3>
             <a href="#">Бесплатно</a>
-            <div class="category-pic category-pic-5"></div>
           </div>
         </section>
 
         <section class="popular-items">
-          <div class="popular-items-header">
-            <h2 class="popular-items-heading">Популярные товары</h2>
+          <div class="popular-items-header clearfix">
+            <h2 class="popular-items-heading">Популярные товары:</h2>
             <a href="#" class="popular-items-btn">Все популярные товары</a>
           </div>
           <div class="gallery">
@@ -140,8 +136,8 @@
         </section>
 
         <section class="popular-brands">
-          <div class="popular-brands-header">
-            <h2 class="popular-brands-heading">Популярные производители</h2>
+          <div class="popular-brands-header clearfix">
+            <h2 class="popular-brands-heading">Популярные производители:</h2>
             <a href="#" class="popular-brands-btn">Все производители</a>
           </div>
           <div class="brands-list">
@@ -191,7 +187,7 @@
 
       <section class="about container clearfix">
         <div class="about-description">
-          <h2 class="firm-name">Компания "Техномарт"</h2>
+          <h2 class="firm-name">Компания «Техномарт»</h2>
           <div class="about-description-content">
             <p>Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта
               и строительства не оставит равнодушными любителей сэкномить на гастарбайтерах.</p>
@@ -207,15 +203,9 @@
         </div>
         <div class="about-contacts">
           <h2 class="contacts-heading">Контакты</h2>
-<!-- Поставила br в параграфе,
-  ведь нелогично делать его намного короче, чем вся колонка.
-  Текст ведь может измениться.
-
-  Добавила дивы для контента каждого столбика, чтобы задать им мин. высоту
-  и кнопки расположить относительно этих дивов с помощью отступа-->
           <div class="about-contacts-content">
             <p>Вы можете забрать товар сами,<br> заехав в наш офис:</p>
-            <a href="#"><img src="img/map.png" alt="г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8"></a>
+            <a href="#"><img src="img/map.png" width="300" height="158" alt="г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8"></a>
           </div>
           <a href="#" class="contact-btn">Заблудились? Напишите нам!</a>
         </div>
@@ -227,8 +217,8 @@
         <div class="container">
           <div class="footer-top-first-line clearfix">
             <a class="footer-logo" href="#">Техномарт</a>
-            <nav class="footer-main-nav">
-              <ul class="footer-main-menu">
+            <nav class="footer-main-nav clearfix">
+              <ul>
                 <li><a href="#">Компания</a></li>
                 <li><a href="#">Новости</a></li>
                 <li><a href="catalog.html">Каталог</a></li>
@@ -240,10 +230,10 @@
           <div class="footer-top-second-line clearfix">
             <p class="footer-address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 +7 (812) 555-05-55</p>
             <nav class="footer-nav clearfix">
-              <ul class="footer-menu">
+              <ul>
                 <li><a href="#">Материалы</a></li>
                 <li><a href="#">Техника</a></li>
-                <li><a href="#">Инструменты</a></li>
+                <li><a href="#">Инструмент</a></li>
                 <li><a href="#">Спецпредложения</a></li>
               </ul>
             </nav>
@@ -264,29 +254,37 @@
           </div>
           <div class="designed-by">
             Разработано -
-            <a href="https://htmlacademy.ru">htmlacademy.ru</a>
+            <a href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a>
           </div>
         </div>
       </div>
     </footer>
 
-    <div class="form">
+    <div class="write-us-form">
       <button class="close-btn"></button>
       <form class="feedback-form" action="://echo.htmlacademy.ru" method="post">
-        <label for="user-name">Ваше имя:</label>
-        <input type="text" name="user-name" id="user-name" value="Представьтесь, пожалуйста" required>
-        <label for="email">Ваш e-mail:</label>
-        <input type="email" name="email" id="email" value="Для отправки ответа" required><br>
-        <label for="mail-field">Текст письма:</label>
-        <textarea name="mail-field" id="mail-field" rows="8" cols="80">В свободной форме</textarea>
-        <input type="submit" name="mail-submit" value="Отправить">
+        <div class="input-fields">
+          <div class="half-width">
+            <label for="user-name">Ваше имя:</label>
+            <input type="text" name="user-name" id="user-name" value="Представьтесь, пожалуйста" required>
+          </div>
+          <div class="half-width">
+            <label for="email">Ваш e-mail:</label>
+            <input type="email" name="email" id="email" value="Для отправки ответа" required><br>
+          </div>
+          <label for="mail-field">Текст письма:</label>
+          <textarea name="mail-field" id="mail-field" rows="8" cols="40">В свободной форме</textarea>
+        </div>
+        <div class="write-us-bottom clearfix">
+          <input class="send-btn" type="submit" name="mail-submit" value="Отправить">
+        </div>
       </form>
     </div>
 
     <div class="cart-confirm">
       <button class="close-btn"></button>
       <p>Товар добавлен в корзину!</p>
-      <div class="confirm-btns">
+      <div class="confirm-btns clearfix">
         <a href="#" class="order-confirm-btn">Оформить заказ</a>
         <a href="#" class="continue-confirm-btn">Продолжить покупки</a>
       </div>

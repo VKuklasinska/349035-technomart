@@ -39,12 +39,12 @@ body {
 }
 
 .header-logo {
-  display: inline-block;
-  vertical-align: top;
+  float: left;
+  display: block;
   height: 42px;
   width: 220px;
-  background-color: #ff5357;
-  box-shadow: 0 5px #c23f42;
+  background-color: #ee3643;
+  box-shadow: 0 5px #b52933;
   line-height: 42px;
   color: white;
   text-transform: uppercase;
@@ -53,44 +53,55 @@ body {
   font-family: "Cuprum", sans-serif;
 }
 
+.header-search-form {
+  float: left;
+  width: 270px;
+}
+
+.header-search-btn {
+  font-size: 0;
+  border: none;
+  margin:0;
+  padding:0;
+  background-image: url("../img/spritesheet.png");
+  background-repeat: no-repeat;
+  width: 42px;
+  height: 42px;
+}
+
 .header-bookmarks,
 .header-cart,
 .header-order-btn {
-  display: inline-block;
-  vertical-align: top;
+  display: block;
+  float: left;
   font-size: 17px;
   color: #ffffff;
   text-decoration: none;
   line-height: 42px;
-}
-
-.header-search-form {
-  display: inline-block;
-  vertical-align: top;
+  height: 42px;
 }
 
 .header-order-btn {
-  height: 42px;
-  width: 150px;
-  background-color: #6db254;
+  float: right;
+  background-color: #63a63e;
   text-align: center;
+  width: 150px;
 }
 
-.header-bookmarks,
+.header-bookmarks {
+  width: 106px;
+  padding-left: 44px;
+}
+
 .header-cart {
-  height: 42px;
-  width: 150px;
-  text-align: center;
+  width: 100px;
+  padding-left: 50px;
 }
 
 .header-bottom {
-  background-color: #f3f7f9;
+  background-color: #f1f5f7;
   padding-top: 46px;
   padding-bottom: 65px;
-}
-
-.header-start-info {
-  margin-bottom: 43px;
 }
 
 .clearfix::after {
@@ -103,52 +114,48 @@ body {
   float: left;
   width: 198px;
   padding-left: 53px;
+  margin-bottom: 0;
   margin-right: 69px;
   margin-top: 0;
   font-size: 16px;
-  line-height: 23px;
   font-style: italic;
-  color: #ff5357;
+  color: #ee3643;
 }
 
 .header-contacts {
   float: left;
   width: 270px;
-  margin-right: 69px;
 }
 
 .header-tel {
-  display: inline-block;
-  width: 264px;
+  display: block;
+  width: 192px;
   height: 39px;
   border: 3px solid #ffffff;
   text-decoration: none;
-  color: #fb463c;
+  color: #e9292a;
   font-size: 21px;
   line-height: 39px;
-  text-align: center;
-  margin-bottom: 9px;
+  padding-left: 72px;
+  margin-bottom: 4px;
 }
 
 .header-contacts-address {
   font-size: 14px;
-  color: #3d546e;
+  color: #32425c;
   text-align: center;
   margin-top: 0px;
   margin-bottom: 0px;
 }
 
-/* Не сходится математика, в чем проблема? Ширина дива 281px.
-  Кнопка Войти - 121, Регистр. - 150
-  Расстояние между ними должно быть 10! Но кнопки становятся в ряд только при 5px. */
 .user-block {
   float: right;
-  width: 281px;
+  min-width: 299px;
 }
 
 .user-block-login,
 .user-block-registration {
-  display: inline-block;
+  display: block;
   background-color: #ffffff;
   height: 45px;
   text-decoration: none;
@@ -158,35 +165,40 @@ body {
 }
 
 .user-block-login {
+  float: left;
+  margin-left: 8px;
   min-width: 121px;
   text-align: center;
-  margin-right: 5px;
 }
 
 .user-block-registration {
+  float: right;
   min-width: 150px;
   text-align: center;
 }
 
-/* Как сделать отступы справа и слева в полосе меню?
-  Крайние кнопки в состоянии фокуса захватывают все до краев меню?
-  Отступ от средней части шапки до меню не получается... Как сделать? 43px*/
-.main-menu {
+.main-nav {
+  margin-top: 40px;
+}
+
+.main-nav ul {
   margin: 0 auto;
   list-style: none;
   padding: 0;
-  background-color: #3d546e;
-  box-shadow: 0 5px #33445a;
+  padding-left: 19px;
+  padding-right: 19px;
+  background-color: #32425c;
+  box-shadow: 0 5px #293449;
   font-size: 0;
 }
 
-.main-menu li {
-  display: inline-block;
+.main-nav li {
+  display: block;
+  float: left;
   margin-right: 0;
-  font-size: 17px;
 }
 
-.main-menu a {
+.main-nav a {
   display: block;
   padding: 0 31px;
   text-decoration: none;
@@ -196,62 +208,84 @@ body {
 }
 
 .categories {
-  font-size: 0;
   margin-top: 59px;
 }
 
-/* Не совсем понятно, когда нужно задавать высоту, а когда нет. Или вообще не нужно?
-
-  Третий блок не совсем точно прилегает к правому краю сайта (подбирала margin-left для
-  блочно-строчных элементов).
-
-  Чтобы на блочно-строчных построить, пришлось слайдер между категориями
-  вставить в HTML разметке. Как с этим жить? :) */
 .category-block {
-  display:inline-block;
-  vertical-align: top;
   position: relative;
-  padding-left: 23px;
+  float: left;
+  position: relative;
+  padding-left: 22px;
   padding-top: 23px;
-  width: 277px;
-  height: 100px;
+  width: 278px;
+  min-height: 100px;
   margin-bottom: 20px;
   margin-left: 20px;
 }
 
+.category-block::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  bottom: 14px;
+  background-image: url("../img/spritesheet.png");
+  background-repeat: no-repeat;
+  width: 90px;
+  height: 90px;
+}
+
 .category-materials {
-  background-color: #ffbf47;
+  background-color: #f6b22d;
   margin-left: 0;
+}
+
+.category-materials::after {
+  background-position: -718px -8px;
 }
 
 .category-instruments {
-  background-color: #3bbce3;
+  background-color: #4aafde;
+}
+
+.category-instruments::after {
+  background-position: -819px -7px;
 }
 
 .category-tech {
-  background-color: #dc91d8;
+  background-color: #cc79d1;
+}
+
+.category-tech::after {
+  background-position: -939px -9px;
 }
 
 .category-discount {
-  background-color: #8ed78f;
+  background-color: #85d179;
   margin-left: 0;
 }
 
+.category-discount::after {
+  background-position: -1052px -13px;
+}
+
 .category-delivery {
-  background-color: #ffc047;
+  background-color: #f6b22d;
   margin-bottom: 0;
   margin-left: 0;
+}
+
+.category-delivery::after {
+  background-position: -1156px -7px;
 }
 
 .category-name {
   font-family: Cuprum, sans-serif;
   font-size: 24px;
   font-weight: bold;
-  line-height: 30px;
   color: #ffffff;
   padding: 0;
   margin: 0;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .category-slider {
@@ -269,14 +303,12 @@ body {
   display: none;
 }
 
-/* Куда картинка вставляется в слайдерах? Не видно ее сейчас почему-то */
 .category-slider-two {
   background-repeat: no-repeat;
 }
 
 .category-block a {
-  display: inline-block;
-  vertical-align: middle;
+  display: block;
   text-decoration: none;
   color: #ffffff;
   font-size: 14px;
@@ -298,26 +330,6 @@ body {
   height: 79px;
 }
 
-.category-pic-1 {
-  background-position: ;
-}
-
-.category-pic-2 {
-  background-position: ;
-}
-
-.category-pic-3 {
-  background-position: ;
-}
-
-.category-pic-4 {
-  background-position: ;
-}
-
-.category-pic-5 {
-  background-position: ;
-}
-
 .categories {
   margin-bottom: 53px;
 }
@@ -329,10 +341,9 @@ body {
 .popular-items-header,
 .popular-brands-header {
   margin-bottom: 20px;
-  background-color: #f9f5f0;
+  background-color: #f7f3ec;
   padding-left: 30px;
   padding-right: 24px;
-  font-size: 0;
 }
 
 /* Нормальная ли это практика задавать однострочным текстовым блокам
@@ -340,9 +351,9 @@ body {
   Или лучше высоту блока определять как line-height + отступы сверху и снизу? */
 .popular-items-heading,
 .popular-brands-heading {
-  display: inline-block;
-  vertical-align: middle;
-  color: #3d546e;
+  float: left;
+  width: 600px;
+  color: #32425c;
   line-height: 89px;
   width: 600px;
   margin-right: 33px;
@@ -350,17 +361,19 @@ body {
 
 .popular-items-btn,
 .popular-brands-btn {
-  display: inline-block;
-  vertical-align: middle;
+  display: block;
+  float: right;
+  min-width: 253px;
   text-decoration: none;
   color: #ffffff;
-  font-size: 14pt;
+  font-size: 14px;
   text-transform: uppercase;
   line-height: 38px;
   min-width: 253px;
   text-align: center;
-  background-color: #ff5357;
+  background-color: #ee3643;
   border-radius: 2px;
+  margin-top: 25px;
 }
 
 .gallery {
@@ -371,7 +384,7 @@ body {
 .gallery-item {
   display: inline-block;
   vertical-align: top;
-  border: 1px solid #eaeaea;
+  border: 1px solid #e5e5e5;
   width: 218px;
   min-height: 316px;
   font-size: 0;
@@ -405,7 +418,7 @@ body {
   font-weight: bold;
   text-decoration: line-through;
   line-height: 18px;
-  color: #a9a9a9;
+  color: #999999;
   width: 180px;
 }
 
@@ -419,8 +432,7 @@ body {
   color: #ffffff;
   text-align: center;
   width: 141px;
-
-  background-color: #ff5357;
+  background-color: #ee3643;
 }
 
 .brands-list {
@@ -432,7 +444,7 @@ body {
   display: inline-block;
   vertical-align: top;
   font-size: 17px;
-  border: 1px solid #eaeaea;
+  border: 1px solid #e5e5e5;
   width: 218px;
   min-height: 143px;
   margin-right: 20px;
@@ -450,14 +462,13 @@ body {
 }
 
 .service {
-  background-color: #f4f8f9;
-  padding-top: 64px;
-/* Какой тут будет отступ снизу? До куда считать? */
-  padding-bottom: 54px;
-  margin-bottom: 80px;
+  background-color: #f2f6f8;
+  padding-top: 67px;
+  padding-bottom: 102px;
+  margin-bottom: 82px;
 }
 
-.slider-paragraph,
+.service-slider-paragraph,
 .service-paragraph {
   font-family: PT Sans, sans-serif;
   font-size: 13px;
@@ -465,20 +476,17 @@ body {
 }
 
 .service-paragraph {
-  margin-bottom: 71px;
-}
-
-.service-heading {
-  margin-bottom: 27px;
+  margin-top: 29px;
+  margin-bottom: 68px;
 }
 
 .service-slider-title {
   text-transform: uppercase;
   font-size: 36px;
-  line-height: 40px;
-  color: #3d546e;
+  line-height: 36px;
+  color: #32425c;
   margin: 0;
-  margin-bottom: 27px;
+  margin-bottom: 25px;
 }
 
 .service-slider-nav ul {
@@ -493,9 +501,9 @@ body {
 .service-slider-nav li {
   display: block;
   width: 217px;
-  box-shadow: inset 0 -1px 0 0 #33445a,
-              inset 0 1px 0 0 #4e637c;
-  background-color: #3d546e;
+  box-shadow: inset 0 -1px 0 0 #293449,
+              inset 0 1px 0 0 #405069;
+  background-color: #32425c;
   font-size: 21px;
   line-height: 61px;
   color: #ffffff;
@@ -507,7 +515,6 @@ body {
   width: 379px;
 }
 
-/* Как определить ширину параграфа, если в макете они все разные для каждого слайдера? */
 .service-slider-paragraph {
   width: 380px;
 }
@@ -531,6 +538,11 @@ body {
   margin-bottom: 86px;
 }
 
+.contacts-heading,
+.firm-name {
+  margin-bottom: 30px;
+}
+
 .about-description {
   float: left;
   width: 519px;
@@ -542,53 +554,64 @@ body {
   width: 301px;
 }
 
+.about-description-content,
+.about-contacts-content {
+  min-height: 244px;
+  margin-bottom: 32px;
+}
+
 .about-description p,
 .about-contacts p {
   font-size: 13px;
   font-family: "PT Sans", sans-serif;
+  margin: 0;
 }
 
-.about-description ul {
+.about-contacts p {
+  margin-bottom: 31px;
+}
+
+.about-description-content p:first-child {
+  margin-bottom: 23px;
+}
+
+.about-description-content ul {
   list-style: none;
   font-size: 18px;
   margin: 0;
+  margin-top: 2px;
   padding: 0;
 }
 
-.about-description-content,
-.about-contacts-content {
-  min-height: 237px;
-  margin-bottom: 40px;
+.about-description-content li {
+  padding-left: 37px;
+  padding-top: 16px;
 }
 
 .more-about-btn,
 .contact-btn {
-  display: inline-block;
-  vertical-align: top;
+  display: block;
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
   color: #ffffff;
   line-height: 38px;
-  background-color: #ff5357;
+  background-color: #ee3643;
   border-radius: 2px;
+  font-size: 14px;
 }
 
 .more-about-btn {
-  min-width: 220px;
-}
-
-.contact-btn {
-  min-width: 300px;
+  width: 220px;
 }
 
 .footer-top {
-  background-color: #3d546e;
+  background-color: #32425c;
   padding-bottom: 28px;
 }
 
 .footer-top-first-line {
-  margin-bottom: 28px;
+  margin-bottom: 27px;
 }
 
 .footer-logo {
@@ -596,8 +619,8 @@ body {
   float: left;
   height: 63px;
   width: 220px;
-  background-color: #ff5357;
-  box-shadow: 0 5px #c23f42;
+  background-color: #ee3643;
+  box-shadow: 0 5px #b52933;
   line-height: 63px;
   text-decoration: none;
   color: white;
@@ -611,34 +634,36 @@ body {
   float: right;
 }
 
-.footer-main-menu {
+.footer-main-nav ul {
   font-size: 0;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.footer-main-menu a {
+.footer-main-nav a {
+  display: block;
   text-decoration: none;
   font-size: 18px;
   color: #ffffff;
-  line-height: 68px;
+  line-height: 38px;
+
 }
 
-.footer-main-menu li {
-  display: inline-block;
-  vertical-align: top;
-  padding: 0 30px;
-  vertical-align: top;
-  font-size: 18px;
+.footer-main-nav li {
+  display: block;
+  float: left;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
 }
 
-.footer-main-menu li:last-child {
+.footer-main-nav li:last-child {
   padding-right: 0px;
 }
 
 .footer-top-second-line {
-  min-height: 65px;
+  min-height: 70px;
 }
 
 .footer-address {
@@ -646,14 +671,14 @@ body {
   margin: 0;
   font-size: 18px;
   color: #ffffff;
-  width: 322px;
+  width: 330px;
 }
 
 .footer-nav {
   float: right;
 }
 
-.footer-menu {
+.footer-nav ul {
   font-size: 0;
   list-style: none;
   margin: 0;
@@ -661,28 +686,29 @@ body {
 }
 
 /* Как выравнить текст меню по верху с адресом? */
-.footer-menu a {
+.footer-nav a {
+  display: block;
   text-decoration: none;
   font-size: 18px;
   color: #ffd180;
-  line-height: 50px;
+  line-height: 48px;
 }
 
-.footer-menu li {
-  display: inline-block;
-  vertical-align: top;
+.footer-nav li {
+  display: block;
+  float: left;
   padding: 0 30px;
-  vertical-align: top;
   font-size: 18px;
 }
 
-.footer-menu li:last-child {
+.footer-nav li:last-child {
   padding-right: 0px;
 }
 
 .footer-bottom {
-  background-color: #33445b;
-  padding: 35px 0;
+  background-color: #293449;
+  padding-top: 37px;
+  padding-bottom: 34px;
 }
 
 .footer-copyright {
@@ -690,6 +716,7 @@ body {
   float: left;
   width: 227px;
   font-size: 16px;
+  line-height: 18px;
   color: #ffffff;
   margin-right: 162px;
 }
@@ -697,7 +724,34 @@ body {
 .social-block {
   float: left;
   margin-right: 120px;
-  font-size: 4px;
+  font-size: 0;
+}
+
+.social-btn {
+  display: block;
+  float: left;
+  width: 41px;
+  height: 41px;
+  border-radius: 50%;
+  background-color: #212a3a;
+  margin-right: 5px;
+  background-image: url("../img/spritesheet.png");
+}
+
+.social-btn:last-child {
+  margin-right: 0;
+}
+
+.social-btn-vk {
+  background-position: ;
+}
+
+.social-btn-fb {
+  background-position: ;
+}
+
+.social-btn-in {
+  background-position: ;
 }
 
 .feedback {
@@ -705,6 +759,7 @@ body {
   width: 135px;
   color: #ffffff;
   font-size: 16px;
+  line-height: 18px;
 }
 
 .designed-by {
@@ -712,28 +767,48 @@ body {
   width: 110px;
   color: #ffffff;
   font-size: 16px;
+  line-height: 18px;
 }
 
 .designed-by a,
 .feedback a {
   text-decoration: none;
-  color: #ffda96;
+  color: #ffd180;
   font-size: 16px;
 }
 
 /*Часть для каталога*/
 
-.user-block-name {
-  width: 299px;
-  background-color: #ffffff;
+.header-cart-active {
+  background-color: #ee3643;
 }
 
-.user-name,
-.user-logout {
+.user-block-name {
+  background-color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.user-name {
+  display: block;
+  float: left;
   text-decoration: none;
   font-size: 21px;
   color: #000000;
   line-height: 45px;
+  padding-left: 46px;
+}
+
+.user-logout {
+  display: block;
+  float: right;
+  text-decoration: none;
+  font-size: 0;
+  color: #000000;
+  line-height: 45px;
+  width: 45px;
+  background-image: url("../img/spritesheet.png");
+  background-repeat: no-repeat;
+  background-position: -367px -6px;
 }
 
 .my-orders,
@@ -742,8 +817,16 @@ body {
   color: #32425c;
 }
 
-.breadcrumbs {
-  min-height: 59px;
+.my-orders {
+  padding-left: 17px;
+}
+
+.personal {
+  padding-left: 27px;
+}
+
+.breadcrumbs a:not(.home) {
+  padding-left: 40px;
 }
 
 .breadcrumbs a {
@@ -773,13 +856,9 @@ body {
 .filter-price,
 .filter-brand,
 .filter-power {
-  margin: 0;
-  border: none;
   border-bottom: 1px solid #e5e5e5;
-  padding: 0;
-/* Padding-top почему-то не срабатывает, а bottom работает,
-  чтобы отодвинуть текст от разделительной линии */
   padding-bottom: 25px;
+  margin-bottom: 24px;
 }
 
 .filter-power {
@@ -792,6 +871,35 @@ body {
   margin-bottom: 9px;
 }
 
+.filters h3 {
+  font-size: 17px;
+  font-family: "PT Sans", sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 18px;
+  line-height: 17px;
+}
+
+.filter-price .price-min,
+.filter-price .price-max {
+  display: block;
+  width: 96px;
+  line-height: 38px;
+  font-size: 17px;
+  font-family: "PT Sans", sans-serif;
+  text-align: center;
+  background-color: #f7f3ec;
+  border: none;
+}
+
+.filter-price .price-min {
+  float: left;
+}
+
+.filter-price .price-max {
+  float: right;
+}
+
 .filter-brand ul,
 .filter-power ul {
   margin: 0;
@@ -799,21 +907,29 @@ body {
   list-style: none;
 }
 
-.filters legend {
-  font-size: 17px;
-  font-family: "PT Sans", sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  margin-bottom: 18px;
-}
-
-/* Как задать стиль для текста чекбоксов и радио?
-  Что-то не срабатывает. */
-.filter-brand input[type="checkbox"],
-.filter-power input[type="radio"] {
+.filter-brand li,
+.filter-power li {
   font-size: 15px;
   font-family: "PT Sans", sans-serif;
   text-transform: uppercase;
+  padding-left: 30px;
+  padding-top: 10px;
+}
+
+.filter-brand input {
+  display: none;
+}
+
+.apply-filter-btn {
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 2px;
+  min-width: 140px;
+  font-size: 13px;
+  font-family: "PT Sans", sans-serif;
+  text-transform: uppercase;
+  line-height: 38px;
+  text-align: center;
 }
 
 .main-gallery {
@@ -911,3 +1027,145 @@ body {
   font-family: "PT Sans", sans-serif;
   font-size: 13px;
 }
+
+/*Модпльное окно WRITE US*/
+
+.write-us-form {
+  width: 620px;
+  min-height: 423px;
+  box-shadow: 0 -7px #ee3643;
+  margin-top: 20px;
+  border: 1px solid grey;
+}
+
+.write-us-form .close-btn {
+  float: right;
+  width: 21px;
+  height: 21px;
+  background-color: #ee3643;
+  border: none;
+  margin-right: 9px;
+  margin-top: 9px;
+  padding: 0;
+}
+
+.write-us-bottom {
+  background-color: #f1f1f1;
+  padding: 37px 80px;
+}
+
+.send-btn {
+  display: block;
+  float: left;
+  width: 460px;
+  text-decoration: none;
+  font-family: "Cuprum", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 38px;
+  text-align: center;
+  border-radius: 2px;
+  border: none;
+  background-color: #ee3643;
+  color: #ffffff;
+}
+
+.input-fields {
+  padding: 0 80px;
+  min-height: 311px;
+}
+
+.input-fields label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.half-width {
+  float: left;
+}
+
+.input-fields input,
+.input-fields textarea {
+    width: 100%;
+    height: 24px;
+    margin-bottom: 10px;
+    padding: 2px 5px;
+    font-family: "Roboto", sans-serif;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    vertical-align: middle;
+
+.feedback-form input[type="text"] {
+
+}
+
+/*Модпльное окно CART*/
+
+.cart-confirm {
+  position: absolute;
+  width: 620px;
+  min-height: 273px;
+  box-shadow: 0 -7px #ee3643;
+  margin-top: 20px;
+  border: 1px solid grey;
+}
+
+/*.cart-confirm::after {
+  content: "";
+  width: 64px;
+  height: 64px;
+  background-color: #63a63e;
+  border-radius: 50%;
+}*/
+
+.cart-confirm .close-btn {
+  float: right;
+  width: 21px;
+  height: 21px;
+  background-color: #ee3643;
+  border: none;
+  margin-right: 9px;
+  margin-top: 9px;
+  padding: 0;
+}
+
+.cart-confirm p {
+  background-color: #ffffff;
+  margin: 0;
+  font-size: 30px;
+  line-height: 163px;
+  padding-left: 179px;
+}
+
+.confirm-btns {
+  background-color: #f1f1f1;
+  padding: 37px 80px;
+}
+
+.order-confirm-btn,
+.continue-confirm-btn {
+  display: block;
+  float: left;
+  text-decoration: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 38px;
+  width: 220px;
+  text-align: center;
+  border-radius: 2px;
+}
+
+.order-confirm-btn {
+  color: #ffffff;
+  background-color: #ee3643;
+  margin-right: 20px;
+}
+
+.continue-confirm-btn {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+/*div, article, header, footer, section, a, p, span {
+outline: 1px solid red;
+}*/
