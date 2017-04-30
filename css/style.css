@@ -33,7 +33,8 @@ body {
 }
 
 .header-top {
-  background-color: #33445a;
+  background-color: #293449;
+  color: #ffffff;
   height: 42px;
   font-size: 0;
 }
@@ -53,20 +54,69 @@ body {
   font-family: "Cuprum", sans-serif;
 }
 
+.header-logo:hover,
+.footer-logo:hover {
+  background-color: #ca2c37;
+  box-shadow: 0 5px #9a212a;
+}
+
+.popular-brands-btn:hover,
+.popular-items-btn:hover,
+.more-about-btn:hover,
+.contact-btn:hover {
+  background-color: #ca2c37;
+}
+
+.header-logo:active,
+.footer-logo:active {
+  background-color: #ba2732;
+  box-shadow: 0 5px #8e1e26;
+}
+
+.popular-brands-btn:active,
+.popular-items-btn:active,
+.more-about-btn:active,
+.contact-btn:active {
+  background-color: #ba2732;
+}
+
 .header-search-form {
   float: left;
   width: 270px;
 }
 
+/* Что происходит с кнопкой с лупой?
+она утекает вниз */
 .header-search-btn {
   font-size: 0;
   border: none;
   margin:0;
   padding:0;
+  background-color: #33445a;
   background-image: url("../img/spritesheet.png");
+  background-position: -547px -8px;
+  opacity: 0.3;
   background-repeat: no-repeat;
   width: 42px;
   height: 42px;
+}
+
+.header-search-btn:hover {
+  background-color: #212a3a;
+  opacity: 1;
+}
+
+.header-search-btn:active {
+  background-color: #ffffff;
+  opacity: 1;
+}
+
+.header-search-field {
+  padding: 0;
+  border: none;
+  height: 42px;
+  background-color: #293449;
+  width: 228px;
 }
 
 .header-bookmarks,
@@ -88,18 +138,44 @@ body {
   width: 150px;
 }
 
+.header-order-btn:hover {
+  background-color: #5fbb2d;
+}
+
+.header-order-btn:active {
+  background-color: #518534;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Чтобы вставить иконку, нужно создать див
+для кнопки, внутри которого появится псевдоэлемент?
+Чтобы проще было спозиционировать иконку относительно кнопки,
+а не родителя кнопки */
 .header-bookmarks {
+  position: relative;
   width: 106px;
   padding-left: 44px;
 }
 
 .header-cart {
+  position: relative;
   width: 100px;
   padding-left: 50px;
 }
 
+.header-bookmarks:hover,
+.header-cart:hover {
+  background-color: #212a3a;
+}
+
+.header-bookmarks:active,
+.header-cart:active {
+  background-color: #161d29;
+}
+
 .header-bottom {
   background-color: #f1f5f7;
+  color: #000000;
   padding-top: 46px;
   padding-bottom: 65px;
 }
@@ -123,8 +199,21 @@ body {
 }
 
 .header-contacts {
+  position: relative;
   float: left;
   width: 270px;
+}
+
+.header-contacts::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 25px;
+  background-image: url("../img/spritesheet.png");
+  background-repeat: no-repeat;
+  top: 10px;
+  left: 10px;
+  background-position: -498px -17px;
 }
 
 .header-tel {
@@ -177,6 +266,16 @@ body {
   text-align: center;
 }
 
+.user-block-login:hover,
+.user-block-registration:hover {
+  color: #ee3643;
+}
+
+.user-block-login:active,
+.user-block-registration:active {
+  color: rgba(0, 0, 0, 0.3);
+}
+
 .main-nav {
   margin-top: 40px;
 }
@@ -205,6 +304,15 @@ body {
   color: white;
   font-size: 17px;
   line-height: 55px;
+}
+
+.main-nav a:hover {
+  background-color: #293449;
+}
+
+.main-nav a:active {
+  background-color: #1d2739;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .categories {
@@ -321,6 +429,14 @@ body {
   border-radius: 2px;
 }
 
+.category-block a:hover{
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.category-block a:active{
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 .category-pic {
   position: absolute;
   top: 22px;
@@ -392,6 +508,10 @@ body {
   text-align: center;
 }
 
+.gallery-item:hover {
+  box-shadow: 0 10px 25px rgba(41, 52, 73, 0.5);
+}
+
 .items-order-btn {
   font-size: 17px;
 }
@@ -453,6 +573,18 @@ body {
   line-height: 143px;
 }
 
+.brand:hover {
+  box-shadow: 0 10px 25px rgba(41, 52, 73, 0.5);
+}
+
+.brand:active {
+  box-shadow: 0 4px 10px rgba(41, 52, 73, 0.5);
+}
+
+.brand:active img {
+  opacity: 0.3;
+}
+
 .brand:nth-child(4n) {
   margin-right: 0;
 }
@@ -508,6 +640,17 @@ body {
   line-height: 61px;
   color: #ffffff;
   padding-left: 23px;
+}
+
+.service-slider-nav li:hover {
+  background-color: #293449;
+  box-shadow: none;
+}
+
+.service-slider-nav li:active {
+  background-color: #ffffff;
+  color: #32425c;
+  box-shadow: none;
 }
 
 .service-slider-features {
@@ -645,9 +788,17 @@ body {
   display: block;
   text-decoration: none;
   font-size: 18px;
-  color: #ffffff;
+  color: #f1f5f7;
   line-height: 38px;
+}
 
+.footer-main-nav a:hover {
+  text-decoration: underline;
+}
+
+.footer-main-nav a:active {
+  text-decoration: underline;
+  color: rgba(241, 245, 247, 0.5);
 }
 
 .footer-main-nav li {
@@ -694,6 +845,14 @@ body {
   line-height: 48px;
 }
 
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+
+.footer-nav a:active {
+  color: rgba(255, 209, 128, 0.5);
+}
+
 .footer-nav li {
   display: block;
   float: left;
@@ -738,6 +897,14 @@ body {
   background-image: url("../img/spritesheet.png");
 }
 
+.social-btn:hover {
+  background-color: #ee3643;
+}
+
+.social-btn:active {
+  background-color: #ee3643;
+}
+
 .social-btn:last-child {
   margin-right: 0;
 }
@@ -775,6 +942,14 @@ body {
   text-decoration: none;
   color: #ffd180;
   font-size: 16px;
+}
+
+.designed-by a:hover {
+  text-decoration: underline;
+}
+
+.designed-by a:active {
+  color: #ee3643;
 }
 
 /*Часть для каталога*/
@@ -1028,77 +1203,6 @@ body {
   font-size: 13px;
 }
 
-/*Модпльное окно WRITE US*/
-
-.write-us-form {
-  width: 620px;
-  min-height: 423px;
-  box-shadow: 0 -7px #ee3643;
-  margin-top: 20px;
-  border: 1px solid grey;
-}
-
-.write-us-form .close-btn {
-  float: right;
-  width: 21px;
-  height: 21px;
-  background-color: #ee3643;
-  border: none;
-  margin-right: 9px;
-  margin-top: 9px;
-  padding: 0;
-}
-
-.write-us-bottom {
-  background-color: #f1f1f1;
-  padding: 37px 80px;
-}
-
-.send-btn {
-  display: block;
-  float: left;
-  width: 460px;
-  text-decoration: none;
-  font-family: "Cuprum", sans-serif;
-  font-size: 14px;
-  text-transform: uppercase;
-  line-height: 38px;
-  text-align: center;
-  border-radius: 2px;
-  border: none;
-  background-color: #ee3643;
-  color: #ffffff;
-}
-
-.input-fields {
-  padding: 0 80px;
-  min-height: 311px;
-}
-
-.input-fields label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.half-width {
-  float: left;
-}
-
-.input-fields input,
-.input-fields textarea {
-    width: 100%;
-    height: 24px;
-    margin-bottom: 10px;
-    padding: 2px 5px;
-    font-family: "Roboto", sans-serif;
-    border: 1px solid #cccccc;
-    border-radius: 5px;
-    vertical-align: middle;
-
-.feedback-form input[type="text"] {
-
-}
-
 /*Модпльное окно CART*/
 
 .cart-confirm {
@@ -1164,6 +1268,101 @@ body {
 .continue-confirm-btn {
   color: #000000;
   background-color: #ffffff;
+}
+
+/*Модпльное окно WRITE US*/
+
+.write-us-form {
+  width: 620px;
+  min-height: 423px;
+  box-shadow: 0 -7px #ee3643;
+  margin-top: 20px;
+  border: 1px solid grey;
+}
+
+.write-us-form .close-btn {
+  float: right;
+  width: 21px;
+  height: 21px;
+  background-color: #ee3643;
+  border: none;
+  margin-right: 9px;
+  margin-top: 9px;
+  padding: 0;
+}
+
+.write-us-bottom {
+  background-color: #f1f1f1;
+  padding: 37px 80px;
+}
+
+.send-btn {
+  display: block;
+  float: left;
+  width: 460px;
+  text-decoration: none;
+  font-family: "Cuprum", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 38px;
+  text-align: center;
+  border: none;
+  padding: 0;
+  border-radius: 2px;
+  background-color: #ee3643;
+  color: #ffffff;
+}
+
+.input-fields {
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 45px;
+  padding-bottom: 37px;
+  min-height: 266px;
+  font-size: 0;
+}
+
+.input-fields label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.input-fields input {
+    width: 188px;
+    margin: 0;
+    height: 18px;
+    margin-bottom: 20px;
+    padding: 8px 14px;
+    font-family: "PT Sans", sans-serif;
+    font-size: 13px;
+    color: #999999;
+    border: 2px solid #d7dcde;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+.input-fields textarea {
+    width: 428px;
+    margin: 0;
+    height: 94px;
+    padding: 8px 14px;
+    font-family: "PT Sans", sans-serif;
+    font-size: 13px;
+    color: #999999;
+    border: 2px solid #d7dcde;
+    border-radius: 4px;
+    vertical-align: top;
+}
+
+.half-width {
+  display: inline-block;
+  max-width: 220px;
+  margin-right: 20px;
+}
+
+.input-fields .half-width:last-of-type {
+  margin-right: 0;
 }
 
 /*div, article, header, footer, section, a, p, span {
