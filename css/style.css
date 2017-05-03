@@ -1,13 +1,9 @@
-/* При масштабировании сайта в браузере
-  карточки Популярных товаров и производителей
-  перескакивают на новые строки */
-
 body {
   margin: 0;
   padding: 0;
   font-size: 17px;
   line-height: 24px;
-  font-family: "Cuprum", "PT Sans", sans-serif;
+  font-family: "Cuprum", "PT Sans", "Arial", sans-serif;
   color: #000000;
   background-color: white;
 }
@@ -18,14 +14,7 @@ body {
   margin: 0 auto;
 }
 
-.popular-brands-heading,
-.popular-items-heading,
-.service-heading,
-.firm-name,
-.contacts-heading,
-.catalog-main-heading,
-.category-info-heading {
-  font-family: Cuprum, sans-serif;
+.section-heading {
   font-size: 30px;
   font-weight: normal;
   text-transform: uppercase;
@@ -60,41 +49,51 @@ body {
   box-shadow: 0 5px #9a212a;
 }
 
-.popular-brands-btn:hover,
-.popular-items-btn:hover,
-.more-about-btn:hover,
-.contact-btn:hover {
-  background-color: #ca2c37;
-}
-
 .header-logo:active,
 .footer-logo:active {
   background-color: #ba2732;
   box-shadow: 0 5px #8e1e26;
 }
 
-.popular-brands-btn:active,
-.popular-items-btn:active,
-.more-about-btn:active,
-.contact-btn:active {
+.btn {
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 18px;
+  padding: 10px 0;
+  text-align: center;
+  background-color: #ee3643;
+  border-radius: 3px;
+}
+
+.btn:hover {
+  background-color: #ca2c37;
+}
+
+.btn:active {
   background-color: #ba2732;
 }
 
 .header-search-form {
   float: left;
   width: 270px;
+  font-size: 0;
 }
 
-/* Что происходит с кнопкой с лупой?
-она утекает вниз */
+/*Как Цвет плэйсхолжера сделать белым и чтобы поле ввода оставалось белым, когда курсор внутри*/
 .header-search-btn {
-  font-size: 0;
+  display: inline-block;
+  font-size: 17px;
+  text-indent: -1000px;
+  overflow: hidden;
   border: none;
   margin:0;
   padding:0;
-  background-color: #33445a;
+  background-color: transparent;
   background-image: url("../img/spritesheet.png");
-  background-position: -547px -8px;
+  background-position: -549px -7px;
   opacity: 0.3;
   background-repeat: no-repeat;
   width: 42px;
@@ -107,16 +106,29 @@ body {
 }
 
 .header-search-btn:active {
-  background-color: #ffffff;
-  opacity: 1;
+  background: #ffffff url("../img/icon-search-active.png") no-repeat 50% 50%;
 }
 
 .header-search-field {
+  display: inline-block;
   padding: 0;
   border: none;
-  height: 42px;
+  line-height: 18px;
+  padding: 12px 7px;
   background-color: #293449;
-  width: 228px;
+  width: 224px;
+  color: #ffffff;
+  font-size: 17px;
+  font-family: "Cuprum", sans-serif;
+}
+
+.header-search-field:hover {
+  background-color: #212a3a;
+}
+
+.header-search-field:active {
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .header-bookmarks,
@@ -147,14 +159,30 @@ body {
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* Чтобы вставить иконку, нужно создать див
-для кнопки, внутри которого появится псевдоэлемент?
-Чтобы проще было спозиционировать иконку относительно кнопки,
-а не родителя кнопки */
 .header-bookmarks {
   position: relative;
   width: 106px;
   padding-left: 44px;
+}
+
+.header-bookmarks::before,
+.header-cart::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 11px;
+  left: 15px;
+  background: transparent url("../img/spritesheet.png") no-repeat;
+  opacity: 0.3;
+}
+
+.header-bookmarks::before {
+  background-position: -205px -19px;
+}
+
+.header-cart::before {
+  background-position: -149px -19px;
 }
 
 .header-cart {
@@ -171,6 +199,16 @@ body {
 .header-bookmarks:active,
 .header-cart:active {
   background-color: #161d29;
+}
+
+.header-bookmarks:hover::before,
+.header-cart:hover::before {
+  opacity: 1;
+}
+
+.header-bookmarks:active::before,
+.header-cart:active::before {
+  opacity: 0.5;
 }
 
 .header-bottom {
@@ -254,16 +292,39 @@ body {
 }
 
 .user-block-login {
+  position: relative;
   float: left;
-  margin-left: 8px;
-  min-width: 121px;
+  margin-left: 18px;
+  min-width: 50px;
+  padding-right: 24px;
+  padding-left: 47px;
   text-align: center;
+}
+
+.user-block-login::before {
+  content: "";
+  position: absolute;
+  top: 11px;
+  left: 14px;
+  width: 20px;
+  height: 20px;
+  background: url("../img/spritesheet.png") no-repeat -261px -17px;
+}
+
+.user-block-login:hover::before {
+  background: url("../img/spritesheet.png") no-repeat -321px -17px;
+}
+
+.user-block-login:active::before {
+  background: url("../img/spritesheet.png") no-repeat -261px -17px;
 }
 
 .user-block-registration {
   float: right;
-  min-width: 150px;
+  min-width: 102px;
+  padding: 0 24px;
   text-align: center;
+  margin-left: 10px
 }
 
 .user-block-login:hover,
@@ -338,7 +399,7 @@ body {
   bottom: 14px;
   background-image: url("../img/spritesheet.png");
   background-repeat: no-repeat;
-  width: 90px;
+  width: 100px;
   height: 90px;
 }
 
@@ -348,7 +409,7 @@ body {
 }
 
 .category-materials::after {
-  background-position: -718px -8px;
+  background-position: -708px -8px;
 }
 
 .category-instruments {
@@ -356,7 +417,7 @@ body {
 }
 
 .category-instruments::after {
-  background-position: -819px -7px;
+  background-position: -809px -7px;
 }
 
 .category-tech {
@@ -364,7 +425,7 @@ body {
 }
 
 .category-tech::after {
-  background-position: -939px -9px;
+  background-position: -929px -9px;
 }
 
 .category-discount {
@@ -373,7 +434,7 @@ body {
 }
 
 .category-discount::after {
-  background-position: -1052px -13px;
+  background-position: -1042px -13px;
 }
 
 .category-delivery {
@@ -383,7 +444,7 @@ body {
 }
 
 .category-delivery::after {
-  background-position: -1156px -7px;
+  background-position: -1146px -7px;
 }
 
 .category-name {
@@ -437,21 +498,8 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-.category-pic {
-  position: absolute;
-  top: 22px;
-  right: 25px;
-  background: url("") no-repeat 0 0;
-  width: 82px;
-  height: 79px;
-}
-
 .categories {
   margin-bottom: 53px;
-}
-
-.popular-items {
-  margin-bottom: 21px;
 }
 
 .popular-items-header,
@@ -462,9 +510,6 @@ body {
   padding-right: 24px;
 }
 
-/* Нормальная ли это практика задавать однострочным текстовым блокам
-  line-height как высоту всего общего блока?
-  Или лучше высоту блока определять как line-height + отступы сверху и снизу? */
 .popular-items-heading,
 .popular-brands-heading {
   float: left;
@@ -477,34 +522,26 @@ body {
 
 .popular-items-btn,
 .popular-brands-btn {
-  display: block;
   float: right;
   min-width: 253px;
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 14px;
-  text-transform: uppercase;
-  line-height: 38px;
-  min-width: 253px;
-  text-align: center;
-  background-color: #ee3643;
-  border-radius: 2px;
   margin-top: 25px;
 }
 
 .gallery {
   font-size: 0;
-  margin-bottom: 21px;
 }
 
 .gallery-item {
+  position: relative;
   display: inline-block;
   vertical-align: top;
   border: 1px solid #e5e5e5;
   width: 218px;
-  min-height: 316px;
-  font-size: 0;
+  font-weight: bold;
+  font-family: "PT Sans", sans-serif;
+  line-height: 20px;
   margin-right: 20px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -512,47 +549,163 @@ body {
   box-shadow: 0 10px 25px rgba(41, 52, 73, 0.5);
 }
 
-.items-order-btn {
-  font-size: 17px;
-}
-
 .gallery-item:last-child {
   margin-right: 0;
 }
 
-.item-name {
-  font-family: PT Sans, sans-serif;
-  font-size: 18px;
-  font-weight: bold;
-  line-height: 20px;
-  color: #000000;
-  width: 180px;
+.gallery-item .flag {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 60px;
+  height: 60px;
+  text-indent: -1000px;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.gallery-item .flag-new {
+  background: url("../img/spritesheet.png") no-repeat -1273px -20px;
+}
+
+.gallery-actions {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 218px;
+  height: 88px;
+  padding: 40px 0;
+  z-index: 10;
+  background-color: white;
+  font-size: 14px;
+}
+
+.gallery-item:hover .gallery-actions {
+  display: block;
+}
+
+.gallery-actions .buy,
+.gallery-actions .bookmark {
+  position: relative;
+  display: block;
+  width: 129px;
   margin: 0 auto;
+  margin-bottom: 7px;
+  padding: 7px 0;
+  border: 3px solid #63a63e;
+  border-bottom-color: #367315;
+  background-color: #63a63e;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: "Cuprum", sans-serif;
+  line-height: 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 3px;
+}
+
+.gallery-actions .buy::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  background-image: url("../img/spritesheet.png");
+  background-repeat: no-repeat;
+  background-position: -150px -18px;
+  opacity: 0.3;
+}
+
+.gallery-actions .bookmark {
+  color: #32425c;
+  background: #ffffff;
+  border-bottom-color: #63a63e;
+}
+
+.gallery-actions .bookmark:hover {
+  border-color: #32425c;
+  border-bottom-color: #32425c;
+}
+
+.gallery-actions .bookmark:active {
+  color: rgba(50, 66, 92, 0.3);
+  border-color: rgba(50, 66, 92, 0.3);
+  border-bottom-color: rgba(50, 66, 92, 0.3);
+}
+
+.gallery-actions .buy:hover {
+  border-color: #5fbb2d;
+  background-color: #5fbb2d;
+  border-bottom-color: #367315;
+}
+
+.gallery-actions .buy:hover::before {
+  opacity: 1;
+}
+
+.gallery-actions .buy:active {
+  border-color: #518534;
+  background-color: #518534;
+}
+
+.gallery-actions .buy:active::before {
+  opacity: 1;
+}
+
+.gallery-item .image {
+  width: 218px;
+  height: 168px;
+}
+
+.gallery-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.item-name {
+  font-size: 18px;
+  min-height: 40px;
+  color: #000000;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0 25px;
 }
 
 .old-price {
-  display: inline-block;
-  vertical-align: top;
-  font-family: PT Sans, sans-serif;
   font-size: 17px;
-  font-weight: bold;
   text-decoration: line-through;
-  line-height: 18px;
+  min-height: 20px;
   color: #999999;
-  width: 180px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .new-price {
-  display: inline-block;
-  vertical-align: top;
-  font-family: PT Sans, sans-serif;
+  position: relative;
   font-size: 17px;
-  font-weight: bold;
-  line-height: 38px;
+  line-height: 20px;
   color: #ffffff;
   text-align: center;
-  width: 141px;
+  width: 80px;
+  margin: 10px auto;
+  margin-bottom: 20px;
+  padding: 10px 30px;
+  border-radius: 3px;
   background-color: #ee3643;
+}
+
+.new-price::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -20px;
+  width: 0;
+  height: 0;
+  border: 20px solid white;
+  border-left-color: transparent;
 }
 
 .brands-list {
@@ -602,7 +755,7 @@ body {
 
 .service-slider-paragraph,
 .service-paragraph {
-  font-family: PT Sans, sans-serif;
+  font-family: "PT Sans", sans-serif;
   font-size: 13px;
   margin: 0;
 }
@@ -664,7 +817,6 @@ body {
 
 .service-slider-one {
   width: 620px;
-/* Куда вставить картинку, чтобы она с каждым новым слайдером менялась? */
   background-image: url("../img/service-1.png");
   background-repeat: no-repeat;
 }
@@ -727,25 +879,23 @@ body {
 }
 
 .about-description-content li {
+  position: relative;
   padding-left: 37px;
   padding-top: 16px;
 }
 
-.more-about-btn,
-.contact-btn {
-  display: block;
-  text-decoration: none;
-  text-transform: uppercase;
-  text-align: center;
-  color: #ffffff;
-  line-height: 38px;
+.about-description-content li::before {
+  position: absolute;
+  content: "";
   background-color: #ee3643;
-  border-radius: 2px;
-  font-size: 14px;
+  width: 25px;
+  height: 2px;
+  left: 0;
+  top: 27px;
 }
 
 .more-about-btn {
-  width: 220px;
+  min-width: 220px;
 }
 
 .footer-top {
@@ -910,15 +1060,15 @@ body {
 }
 
 .social-btn-vk {
-  background-position: ;
+  background-position: -1470px -5px;
 }
 
 .social-btn-fb {
-  background-position: ;
+  background-position: -1357px -9px;
 }
 
 .social-btn-in {
-  background-position: ;
+  background-position: -1411px -9px;
 }
 
 .feedback {
@@ -954,8 +1104,17 @@ body {
 
 /*Часть для каталога*/
 
+/*Какие стили для кнопки?*/
 .header-cart-active {
   background-color: #ee3643;
+}
+
+.header-cart-active:hover {
+  background-color: #ca2c37;
+}
+
+.header-cart-active:active {
+  background-color: #ba2732;
 }
 
 .user-block-name {
@@ -964,6 +1123,7 @@ body {
 }
 
 .user-name {
+  position: relative;
   display: block;
   float: left;
   text-decoration: none;
@@ -971,6 +1131,28 @@ body {
   color: #000000;
   line-height: 45px;
   padding-left: 46px;
+}
+
+.user-name::before {
+  position: absolute;
+  content: "";
+  width: 22px;
+  height: 22px;
+  top: 10px;
+  left: 15px;
+  background: url("../img/spritesheet.png") no-repeat -621px -17px;
+}
+
+.user-name:hover::before {
+  background-position: -681px -17px;
+}
+
+.user-name:active {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.user-name:active::before {
+  background-position: -621px -17px;
 }
 
 .user-logout {
@@ -986,6 +1168,14 @@ body {
   background-position: -367px -6px;
 }
 
+.user-logout:hover {
+  background-position: -428px -6px;
+}
+
+.user-logout:active {
+  background-position: -367px -6px;
+}
+
 .my-orders,
 .personal {
   font-size: 16px;
@@ -997,7 +1187,29 @@ body {
 }
 
 .personal {
+  position: relative;
   padding-left: 27px;
+}
+
+.personal::before {
+  position: absolute;
+  content: "";
+  width: 4px;
+  height: 4px;
+  top: 7px;
+  left: 11px;
+  background-color: #32425c;
+  border-radius: 50%;
+}
+
+.my-orders:hover,
+.personal:hover {
+  color: #ee3643;
+}
+
+.my-orders:active,
+.personal:active {
+  color: rgba(50, 66, 92, 0.3);
 }
 
 .breadcrumbs a:not(.home) {
@@ -1211,34 +1423,63 @@ body {
   min-height: 273px;
   box-shadow: 0 -7px #ee3643;
   margin-top: 20px;
-  border: 1px solid grey;
+  outline: 1px solid grey;
 }
 
-/*.cart-confirm::after {
-  content: "";
-  width: 64px;
-  height: 64px;
-  background-color: #63a63e;
-  border-radius: 50%;
-}*/
-
 .cart-confirm .close-btn {
+  position: relative;
   float: right;
   width: 21px;
   height: 21px;
-  background-color: #ee3643;
   border: none;
   margin-right: 9px;
   margin-top: 9px;
   padding: 0;
+  cursor: pointer;
+  background-color: white;
+}
+
+.cart-confirm .close-btn::after,
+.cart-confirm .close-btn::before {
+  position: absolute;
+  content: "";
+  width: 27px;
+  height: 5px;
+  top: 8px;
+  left: -3px;
+  border-radius: 1px;
+  background-color: #ee3643;
+}
+
+.cart-confirm .close-btn::after {
+  transform: rotate(45deg);
+}
+
+.cart-confirm .close-btn::before {
+  transform: rotate(-45deg);
 }
 
 .cart-confirm p {
+  position: relative;
   background-color: #ffffff;
   margin: 0;
+  margin-top: 32px;
   font-size: 30px;
-  line-height: 163px;
-  padding-left: 179px;
+  line-height: 31px;
+  padding-top: 34px;
+  padding-bottom: 66px;
+  padding-left: 180px;
+}
+
+.cart-confirm p::before {
+  position: absolute;
+  content: "";
+  width: 64px;
+  height: 64px;
+  left: 80px;
+  top: 17px;
+  background-color: #63a63e;
+  border-radius: 50%;
 }
 
 .confirm-btns {
@@ -1248,24 +1489,25 @@ body {
 
 .order-confirm-btn,
 .continue-confirm-btn {
-  display: block;
   float: left;
-  text-decoration: none;
-  font-size: 14px;
-  text-transform: uppercase;
-  line-height: 38px;
   width: 220px;
-  text-align: center;
-  border-radius: 2px;
 }
 
 .order-confirm-btn {
-  color: #ffffff;
-  background-color: #ee3643;
   margin-right: 20px;
 }
 
 .continue-confirm-btn {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.continue-confirm-btn:hover {
+  color: #ee3643;
+  background-color: #ffffff;
+}
+
+.continue-confirm-btn:active {
   color: #000000;
   background-color: #ffffff;
 }
@@ -1277,18 +1519,40 @@ body {
   min-height: 423px;
   box-shadow: 0 -7px #ee3643;
   margin-top: 20px;
-  border: 1px solid grey;
+  outline: 1px solid grey;
 }
 
 .write-us-form .close-btn {
+  position: relative;
   float: right;
   width: 21px;
   height: 21px;
-  background-color: #ee3643;
+  background-color: white;
   border: none;
   margin-right: 9px;
   margin-top: 9px;
   padding: 0;
+  cursor: pointer;
+}
+
+.write-us-form .close-btn::after,
+.write-us-form .close-btn::before {
+  position: absolute;
+  content: "";
+  width: 27px;
+  height: 5px;
+  top: 8px;
+  left: -3px;
+  border-radius: 1px;
+  background-color: #ee3643;
+}
+
+.write-us-form .close-btn::after {
+  transform: rotate(45deg);
+}
+
+.write-us-form .close-btn::before {
+  transform: rotate(-45deg);
 }
 
 .write-us-bottom {
@@ -1297,20 +1561,11 @@ body {
 }
 
 .send-btn {
-  display: block;
   float: left;
   width: 460px;
-  text-decoration: none;
   font-family: "Cuprum", sans-serif;
-  font-size: 14px;
-  text-transform: uppercase;
-  line-height: 38px;
-  text-align: center;
   border: none;
-  padding: 0;
-  border-radius: 2px;
-  background-color: #ee3643;
-  color: #ffffff;
+  border-radius: 3px;
 }
 
 .input-fields {
