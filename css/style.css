@@ -1194,6 +1194,14 @@ body {
 /*Часть для каталога*/
 
 /*Какие стили для кнопки?*/
+.inner-page-header-logo {
+  text-decoration: none;
+}
+
+.inner-pafe-footer-logo {
+  text-decoration: none;
+}
+
 .header-cart-active {
   background-color: #ee3643;
 }
@@ -1306,12 +1314,34 @@ body {
 }
 
 .breadcrumbs a {
+  position: relative;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 13px;
   font-family: "PT Sans", sans-serif;
   line-height: 59px;
   color: #000000;
+}
+
+.breadcrumbs a:not(:first-of-type)::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 15px;
+  width: 8px;
+  height: 12px;
+  background: url("../img/breadcrumbs-arrow.png") no-repeat;
+}
+
+.breadcrumbs a:first-child {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 59px;
+  width: 15px;
+  height: 12px;
+  text-indent: -1000px;
+  overflow: hidden;
+  background: url("../img/icon-home.png") no-repeat;
 }
 
 .catalog-main-heading {
@@ -1436,7 +1466,6 @@ body {
   font-size: 15px;
   font-family: "PT Sans", sans-serif;
   text-transform: uppercase;
-
 }
 
 .filter-brand input {
