@@ -38,7 +38,7 @@
         </div>
         <nav class="main-nav container">
           <ul class="clearfix">
-            <li><a href="index.html">Главная</a></li>
+            <li><a>Главная</a></li>
             <li><a href="#">Компания</a></li>
             <li><a href="catalog.html">Каталог</a></li>
             <li><a href="#">Новости</a></li>
@@ -65,18 +65,30 @@
             <h3 class="category-name">Техника</h3>
             <a href="#">Для стройки</a>
           </div>
+
           <div class="category-slider">
-            <div class="category-slider-one">
-              <p>Дрели</p>
-              <p>Соседям на радость!</p>
-              <a href="#" class="open-catalog-btn">Открыть каталог</a>
+            <input type="radio" name="toggle" id="btn-1" checked>
+            <input type="radio" name="toggle" id="btn-2">
+            <div class="category-slider-controls">
+              <label for="btn-1"></label>
+              <label for="btn-2"></label>
             </div>
-            <div class="category-slider-two">
-              <p>Перфораторы</p>
-              <p>Настоящие мужские игрушки</p>
-              <a href="#" class="open-catalog-btn">Открыть каталог</a>
+            <div class="category-slides">
+              <label class="next" for="btn-2"></label>
+              <div class="category-slide category-slide-one clearfix" id="slide1">
+                <div class="category-slide-title">Дрели</div>
+                <div>Соседям на радость!</div>
+                <a href="#" class="category-slide-btn btn">Открыть каталог</a>
+              </div>
+              <label class="prev" for="btn-1"></label>
+              <div class="category-slide category-slide-two clearfix" id="slide2">
+                <div class="category-slide-title">Перфораторы</div>
+                <div>Настоящие мужские игрушки</div>
+                <a href="#" class="category-slide-btn btn">Открыть каталог</a>
+              </div>
             </div>
           </div>
+
           <div class="category-block category-discount">
             <h3 class="category-name">Скидки 50%</h3>
             <a href="#">На 350 товаров</a>
@@ -265,7 +277,7 @@
       </div>
     </footer>
 
-    <div class="write-us-form">
+    <div class="modal-content-write-us">
       <button class="close-btn"></button>
       <form class="feedback-form" action="://echo.htmlacademy.ru" method="post">
         <div class="input-fields">
@@ -285,8 +297,9 @@
         </div>
       </form>
     </div>
+    <div class="modal-overlay"></div>
 
-    <div class="cart-confirm">
+    <div class="modal-content-cart">
       <button class="close-btn"></button>
       <p>Товар добавлен в корзину!</p>
       <div class="confirm-btns clearfix">

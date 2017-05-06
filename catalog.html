@@ -12,7 +12,7 @@
     <header class="main-header">
       <div class="header-top">
         <div class="container">
-          <a class="header-logo">Техномарт</a>
+          <a href="index.html" class="header-logo">Техномарт</a>
           <form class="header-search-form" action="://echo.htmlacademy.ru" method="post">
             <input class="header-search-btn" type="submit" name="search-btn">
             <input class="header-search-field" type="search" name="search" placeholder="Поиск:">
@@ -63,53 +63,55 @@
       </div>
       <h2 class="catalog-main-heading section-heading">Перфораторы</h2>
       <aside class="filters">
-        <span class="filters-heading">Фильтр:</span>
+        <div class="filters-heading">Фильтр:</div>
         <form action="://echo.htmlacademy.ru" method="get">
-          <div class="filter-price clearfix">
+          <div class="range-filter">
             <h3>Цена:</h3>
-            <div class="range">
-              <div class="range-line"></div>
-              <div class="range-min"></div>
-              <div class="range-max"></div>
+            <div class="range-controls">
+              <div class="scale"><div class="bar" style="width:70%"></div></div>
+              <div class="toggle min-toggle"></div>
+              <div class="toggle max-toggle"></div>
             </div>
-            <input class="price-min" type="text" name="price-min" value="0"> -
-            <input class="price-max" type="text" name="price-max" value="30000">
+            <div class="price-controls">
+              <input class="price-min" type="text" name="price-min" value="0">
+              <input class="price-max" type="text" name="price-max" value="30000">
+            </div>
           </div>
           <div class="filter-brand">
             <h3>Производители:</h3>
-              <ul>
-                <li>
-                  <label for="Bosch"></label>
-                  <input type="checkbox" id="Bosch" value="Bosch" checked>Bosch
-                </li>
-                <li>
-                  <label for="Интерскол"></label>
-                  <input type="checkbox" id="Интерскол" value="Интерскол">Интерскол
-                </li>
-                <li>
-                  <label for="Makita"></label>
-                  <input type="checkbox" id="Makita" value="Makita" checked>Makita
-                </li>
-                <li>
-                  <label for="Dewalt"></label>
-                  <input type="checkbox" id="Dewalt" value="Dewalt">Dewalt
-                </li>
-                <li>
-                  <label for="Hitachi"></label>
-                  <input type="checkbox" id="Hitachi" value="Hitachi">Hitachi
-                </li>
-              </ul>
+            <ul>
+              <li>
+                <label for="brand-1">Bosch</label>
+                <input type="checkbox" id="brand-1" value="Bosch" checked>
+              </li>
+              <li>
+                <label for="brand-2">Интерскол</label>
+                <input type="checkbox" id="brand-2" value="Интерскол">
+              </li>
+              <li>
+                <label for="brand-3">Makita</label>
+                <input type="checkbox" id="brand-3" value="Makita" checked>
+              </li>
+              <li>
+                <label for="brand-4">Dewalt</label>
+                <input type="checkbox" id="brand-4" value="Dewalt">
+              </li>
+              <li>
+                <label for="brand-5">Hitachi</label>
+                <input type="checkbox" id="brand-5" value="Hitachi">
+              </li>
+            </ul>
           </div>
           <div class="filter-power">
             <h3>Питание:</h3>
             <ul>
               <li>
-                <label for="power-1"></label>
-                <input type="radio" id="power-1" value="1" checked>Аккумуляторные<br>
+                <input type="radio" id="power-1" value="1" checked>
+                <label for="power-1">Аккумуляторные</label>
               </li>
               <li>
-                <label for="power-2"></label>
-                <input type="radio" id="power-2" value="2">Сетевые
+                <input type="radio" id="power-2" value="2">
+                <label for="power-2">Сетевые</label>
               </li>
             </ul>
           </div>

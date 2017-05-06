@@ -126,7 +126,7 @@ body {
   background-color: #212a3a;
 }
 
-.header-search-field:active {
+.header-search-field:focus {
   background-color: #ffffff;
   color: #000000;
 }
@@ -458,6 +458,7 @@ body {
 }
 
 .category-slider {
+  position: relative;
   float: left;
   width: 620px;
   height: 266px;
@@ -465,15 +466,103 @@ body {
   margin-bottom: 0;
   margin-right: 20px;
   font-size: 14px;
-  background-image: url("../img/slider-2.jpg");
 }
 
-.category-slider-two {
+.category-slide-title {
+  margin-bottom: 10px;
+  font-size: 36px;
+  line-height: 36px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.category-slide-title + div {
+  font-size: 18px;
+  margin-bottom: 113px;
+  line-height: 18px;
+  font-family: "PT Sans", sans-serif;
+  color: white;
+}
+
+.category-slide-btn {
+  float: left;
+  min-width: 197px;
+}
+
+.category-slide {
+  display: none;
+  padding-top: 27px;
+  padding-bottom: 24px;
+  padding-left: 24px;
+  background-repeat: no-repeat;
+}
+
+.category-slider input[type="radio"] {
   display: none;
 }
 
-.category-slider-two {
-  background-repeat: no-repeat;
+.category-slider-controls {
+  position: absolute;
+  left: 295px;
+  bottom: 24px;
+  z-index: 10;
+  font-size: 0;
+}
+
+.category-slider-controls label {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin-right: 11px;
+  vertical-align: top;
+  background-color: white;
+  border: 3px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.category-slide-one {
+  background-image: url("../img/slider-1.jpg");
+}
+
+.category-slide-two {
+  background-image: url("../img/slider-2.jpg");
+}
+
+#btn-1:checked ~ .category-slides #slide1,
+#btn-2:checked ~ .category-slides #slide2 {
+  display: block;
+}
+
+#btn-1:checked ~ .category-slider-controls label[for="btn-1"],
+#btn-2:checked ~ .category-slider-controls label[for="btn-2"] {
+  background-color: #ee3643;
+}
+
+.category-slides {
+  position: relative;
+}
+
+.category-slider-controls .prev {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  width: 22px;
+  height: 40px;
+  background-image: url("../img/arrow-left.png");
+  cursor: pointer;
+}
+
+.category-slider-controls .next {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  display: block;
+  width: 22px;
+  height: 40px;
+  background-image: url("../img/arrow-right.png");
+  cursor: pointer;
 }
 
 .category-block a {
@@ -561,7 +650,7 @@ body {
   height: 60px;
   text-indent: -1000px;
   overflow: hidden;
-  z-index: 20;
+  z-index:5;
 }
 
 .gallery-item .flag-new {
@@ -576,7 +665,7 @@ body {
   width: 218px;
   height: 88px;
   padding: 40px 0;
-  z-index: 10;
+  z-index: 4;
   background-color: white;
   font-size: 14px;
 }
@@ -1240,7 +1329,7 @@ body {
   margin-right: 20px;
 }
 
-.filter-price,
+.range-filter,
 .filter-brand,
 .filter-power {
   border-bottom: 1px solid #e5e5e5;
@@ -1252,12 +1341,6 @@ body {
   border-bottom: none;
 }
 
-.range {
-  background-color: #f7f3ec;
-  height: 80px;
-  margin-bottom: 9px;
-}
-
 .filters h3 {
   font-size: 17px;
   font-family: "PT Sans", sans-serif;
@@ -1267,24 +1350,78 @@ body {
   line-height: 17px;
 }
 
-.filter-price .price-min,
-.filter-price .price-max {
-  display: block;
-  width: 96px;
-  line-height: 38px;
+.range-controls {
+  position: relative;
+  background-color: #f7f3ec;
+  height: 80px;
+  margin-bottom: 9px;
+  padding: 0 20px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.range-controls .scale {
+  margin-top: 39px;
+  height: 2px;
+  background-color: #d7dcde;
+}
+
+.range-controls .bar {
+  height: 2px;
+  background-color: #00ca74;
+}
+
+.range-controls .toggle {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  width: 4px;
+  height: 4px;
+  border: 8px solid white;
+  background-color: #ababab;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 2px 1px 0 #ababab;
+}
+
+.range-controls .max-toggle {
+  left: 145px;
+}
+
+.price-controls .price-min,
+.price-controls .price-max {
+  width: 82px;
   font-size: 17px;
+  line-height: 18px;
   font-family: "PT Sans", sans-serif;
   text-align: center;
+  font-style: normal;
+  padding: 10px 7px;
   background-color: #f7f3ec;
   border: none;
+  border-radius: 4px;
 }
 
-.filter-price .price-min {
-  float: left;
+.price-controls {
+  position: relative;
+  height: 38px;
 }
 
-.filter-price .price-max {
-  float: right;
+.price-controls::before {
+  content: "—";
+  position: absolute;
+  top: 7px;
+  left: 105px;
+}
+
+.price-controls .price-min {
+  position: absolute;
+  left: 0;
+}
+
+.price-controls .price-max {
+  position: absolute;
+  right: 0;
 }
 
 .filter-brand ul,
@@ -1299,12 +1436,42 @@ body {
   font-size: 15px;
   font-family: "PT Sans", sans-serif;
   text-transform: uppercase;
-  padding-left: 30px;
-  padding-top: 10px;
+
 }
 
 .filter-brand input {
   display: none;
+}
+
+.filter-brand label {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+.filter-brand label::before {
+  position: absolute;
+  content: "";
+  top: 5px;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background-image: url("../img/spritesheet.png");
+  background-position: -20px -14px;
+}
+
+#brand-1:checked ~ label::before {
+  background-position: -83px -14px;
+}
+
+.filter-power input {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 4px solid #c1c1c1;
 }
 
 .apply-filter-btn {
@@ -1334,16 +1501,13 @@ body {
   background-color: #f7f3ec;
   margin-bottom: 21px;
   padding-left: 19px;
+  border-radius: 3px;
 }
 
 .gallery-sorting-name,
 .filters-heading {
   font-size: 13px;
   line-height: 38px;
-}
-
-.filters-heading {
-  display: block;
 }
 
 .gallery-sorting a {
@@ -1417,16 +1581,22 @@ body {
 
 /*Модпльное окно CART*/
 
-.cart-confirm {
-  position: absolute;
+.modal-content-cart {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
   width: 620px;
   min-height: 273px;
-  box-shadow: 0 -7px #ee3643;
-  margin-top: 20px;
-  outline: 1px solid grey;
+  background-color: white;
+  margin-top: -200px;
+  margin-left: -295px;
+  box-shadow: 0 13px 25px 7px rgba(41, 52, 73, 0.5),
+              0 -7px #ee3643;
+  z-index: 20;
 }
 
-.cart-confirm .close-btn {
+.modal-content-cart .close-btn {
   position: relative;
   float: right;
   width: 21px;
@@ -1439,8 +1609,8 @@ body {
   background-color: white;
 }
 
-.cart-confirm .close-btn::after,
-.cart-confirm .close-btn::before {
+.modal-content-cart .close-btn::after,
+.modal-content-cart .close-btn::before {
   position: absolute;
   content: "";
   width: 27px;
@@ -1451,15 +1621,15 @@ body {
   background-color: #ee3643;
 }
 
-.cart-confirm .close-btn::after {
+.modal-content-cart .close-btn::after {
   transform: rotate(45deg);
 }
 
-.cart-confirm .close-btn::before {
+.modal-content-cart .close-btn::before {
   transform: rotate(-45deg);
 }
 
-.cart-confirm p {
+.modal-content-cart p {
   position: relative;
   background-color: #ffffff;
   margin: 0;
@@ -1471,7 +1641,7 @@ body {
   padding-left: 180px;
 }
 
-.cart-confirm p::before {
+.modal-content-cart p::before {
   position: absolute;
   content: "";
   width: 64px;
@@ -1512,17 +1682,35 @@ body {
   background-color: #ffffff;
 }
 
-/*Модпльное окно WRITE US*/
-
-.write-us-form {
-  width: 620px;
-  min-height: 423px;
-  box-shadow: 0 -7px #ee3643;
-  margin-top: 20px;
-  outline: 1px solid grey;
+.modal-overlay {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
-.write-us-form .close-btn {
+/*Модпльное окно WRITE US*/
+
+.modal-content-write-us {
+  display: none;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  margin-left: -295px;
+  width: 620px;
+  min-height: 423px;
+  background-color: white;
+  margin-top: 20px;
+  box-shadow: 0 13px 25px 7px rgba(41, 52, 73, 0.5),
+              0 -7px #ee3643;
+  z-index: 20;
+}
+
+.modal-content-write-us .close-btn {
   position: relative;
   float: right;
   width: 21px;
@@ -1535,8 +1723,8 @@ body {
   cursor: pointer;
 }
 
-.write-us-form .close-btn::after,
-.write-us-form .close-btn::before {
+.modal-content-write-us .close-btn::after,
+.modal-content-write-us .close-btn::before {
   position: absolute;
   content: "";
   width: 27px;
@@ -1547,11 +1735,11 @@ body {
   background-color: #ee3643;
 }
 
-.write-us-form .close-btn::after {
+.modal-content-write-us .close-btn::after {
   transform: rotate(45deg);
 }
 
-.write-us-form .close-btn::before {
+.modal-content-write-us .close-btn::before {
   transform: rotate(-45deg);
 }
 
