@@ -14,8 +14,8 @@
         <div class="container">
           <a class="header-logo">Техномарт</a>
           <form class="header-search-form" action="://echo.htmlacademy.ru" method="post">
-            <input class="header-search-btn" type="submit" name="search-btn">
             <input class="header-search-field" type="search" name="search" placeholder="Поиск:">
+            <input class="header-search-btn" type="submit" name="search-btn">
           </form>
           <a href="#" class="header-bookmarks">Закладки:<span class="bookmarks-nbr"> 0</span></a>
           <a href="#" class="header-cart">Корзина:<span class="items-nbr"> 0</span></a>
@@ -106,7 +106,6 @@
           </div>
           <div class="gallery">
             <article class="gallery-item">
-              <div class="flag">новинка</div>
               <div class="gallery-actions">
                 <a class="buy" href="#">Купить</a>
                 <a class="bookmark" href="#">В закладки</a>
@@ -117,7 +116,6 @@
               <div class="new-price">25500 Р.</div>
             </article>
             <article class="gallery-item">
-              <div class="flag">новинка</div>
               <div class="gallery-actions">
                 <a class="buy" href="#">Купить</a>
                 <a class="bookmark" href="#">В закладки</a>
@@ -128,7 +126,6 @@
               <div class="new-price">15500 Р.</div>
             </article>
             <article class="gallery-item">
-              <div class="flag">новинка</div>
               <div class="gallery-actions">
                 <a class="buy" href="#">Купить</a>
                 <a class="bookmark" href="#">В закладки</a>
@@ -138,8 +135,7 @@
               <div class="old-price">30500 Р.</div>
               <div class="new-price">25500 Р.</div>
             </article>
-            <article class="gallery-item">
-              <div class="flag flag-new">новинка</div>
+            <article class="gallery-item gallery-item-new">
               <div class="gallery-actions">
                 <a class="buy" href="#">Купить</a>
                 <a class="bookmark" href="#">В закладки</a>
@@ -158,14 +154,14 @@
             <a href="#" class="popular-brands-btn btn">Все производители</a>
           </div>
           <div class="brands-list">
-            <a href="#" class="brand"><img src="img/logo-1.png" alt="BOSCH"></a>
-            <a href="#" class="brand"><img src="img/logo-2.png" alt="Makita"></a>
-            <a href="#" class="brand"><img src="img/logo-3.png" alt="DeWALT"></a>
-            <a href="#" class="brand"><img src="img/logo-4.png" alt="Интерскол"></a>
-            <a href="#" class="brand"><img src="img/logo-5.png" alt="Hitachi"></a>
-            <a href="#" class="brand"><img src="img/logo-6.png" alt="LG"></a>
-            <a href="#" class="brand"><img src="img/logo-7.png" alt="AEG"></a>
-            <a href="#" class="brand"><img src="img/logo-8.png" alt="Metabo"></a>
+            <a href="#" class="brand"><img src="img/logo-1.png" width="122" height="32" alt="BOSCH"></a>
+            <a href="#" class="brand"><img src="img/logo-2.png" width="123" height="46" alt="Makita"></a>
+            <a href="#" class="brand"><img src="img/logo-3.png" width="146" height="51" alt="DeWALT"></a>
+            <a href="#" class="brand"><img src="img/logo-4.png" width="184" height="32" alt="Интерскол"></a>
+            <a href="#" class="brand"><img src="img/logo-5.png" width="143" height="22" alt="Hitachi"></a>
+            <a href="#" class="brand"><img src="img/logo-6.png" width="121" height="73" alt="LG"></a>
+            <a href="#" class="brand"><img src="img/logo-7.png" width="151" height="84" alt="AEG"></a>
+            <a href="#" class="brand"><img src="img/logo-8.png" width="201" height="63" alt="Metabo"></a>
           </div>
         </section>
       </div>
@@ -176,26 +172,28 @@
           <p class="service-paragraph">Хороший интернет-магазин отличается от плохого не только ценами!<br>
              Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
           <div class="services-slider">
+            <input type="radio" name="service-slider" id="nav-1" checked>
+            <input type="radio" name="service-slider" id="nav-2">
+            <input type="radio" name="service-slider" id="nav-3">
             <div class="service-slider-nav">
-              <ul>
-                <li>Доставка</li>
-                <li>Гарантия</li>
-                <li>Кредит</li>
-              </ul>
+              <label for="nav-1">Доставка</label>
+              <label for="nav-2">Гарантия</label>
+              <label for="nav-3">Кредит</label>
             </div>
-            <div class="service-slider-features">
-              <div class="service-slider-one">
-                <h3 class="service-slider-title">Доставка</h3>
-                <p class="service-slider-paragraph">Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо хзаработаем, поднимая его на ваш этаж!</p>
+            <div class="service-slides">
+              <div class="service-slide service-slide-one" id="service-slide-1">
+                <h3 class="service-slider-title" >Доставка</h3>
+                <p class="service-slider-paragraph">Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж!</p>
               </div>
-              <div class="service-slider-two">
+              <div class="service-slide service-slide-two" id="service-slide-2">
                 <h3 class="service-slider-title">Гарантия</h3>
                 <p class="service-slider-paragraph">Если купленный у нас товар поломается или заискрит, а также в случае пожара, спровоцированного его возгаранием, вы всегда можете быть уверены в нашей гарантии. Мы обменяем сгоревший товар на новый.
                   Дом уж восстановите как-нибудь сами.</p>
               </div>
-              <div class="service-slider-three">
+              <div class="service-slide service-slide-three" id="service-slide-3">
                 <h3 class="service-slider-title">Кредит</h3>
                 <p class="service-slider-paragraph">Залезть в долговую яму стало проще! Кредитные консультанты придут вам на помощь.</p>
+                <a href="#" class="credit-btn btn">Отправить заявку</a>
               </div>
             </div>
           </div>

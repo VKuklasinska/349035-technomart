@@ -14,8 +14,8 @@
         <div class="container">
           <a href="index.html" class="header-logo inner-page-header-logo">Техномарт</a>
           <form class="header-search-form" action="://echo.htmlacademy.ru" method="post">
-            <input class="header-search-btn" type="submit" name="search-btn">
             <input class="header-search-field" type="search" name="search" placeholder="Поиск:">
+            <input class="header-search-btn" type="submit" name="search-btn">
           </form>
           <a href="#" class="header-bookmarks">Закладки:<span class="bookmarks-nbr"> 0</span></a>
           <a href="#" class="header-cart header-cart-active">Корзина:<span class="items-nbr"> 10</span></a>
@@ -56,7 +56,7 @@
 
     <main class="container clearfix">
       <div class="breadcrumbs">
-        <a class="home" href="#">Главная</a>
+        <a class="home" href="index.html">Главная</a>
         <a href="#">Каталог</a>
         <a href="#">Инструмент</a>
         <a href="#">Перфораторы</a>
@@ -64,11 +64,11 @@
       <h2 class="catalog-main-heading section-heading">Перфораторы</h2>
       <aside class="filters">
         <div class="filters-heading">Фильтр:</div>
-        <form action="://echo.htmlacademy.ru" method="get">
-          <div class="range-filter">
+        <form action="://echo.htmlacademy.ru" method="post">
+          <div class="filter-price">
             <h3>Цена:</h3>
             <div class="range-controls">
-              <div class="scale"><div class="bar" style="width:70%"></div></div>
+              <div class="scale"><div class="bar" style="width:80%"></div></div>
               <div class="toggle min-toggle"></div>
               <div class="toggle max-toggle"></div>
             </div>
@@ -81,24 +81,24 @@
             <h3>Производители:</h3>
             <ul>
               <li>
+                <input type="checkbox" name="filter-brand" id="brand-1" value="Bosch" checked>
                 <label for="brand-1">Bosch</label>
-                <input type="checkbox" id="brand-1" value="Bosch" checked>
               </li>
               <li>
+                <input type="checkbox" name="filter-brand" id="brand-2" value="Интерскол">
                 <label for="brand-2">Интерскол</label>
-                <input type="checkbox" id="brand-2" value="Интерскол">
               </li>
               <li>
+                <input type="checkbox" name="filter-brand" id="brand-3" value="Makita" checked>
                 <label for="brand-3">Makita</label>
-                <input type="checkbox" id="brand-3" value="Makita" checked>
               </li>
               <li>
+                <input type="checkbox" name="filter-brand" id="brand-4" value="Dewalt">
                 <label for="brand-4">Dewalt</label>
-                <input type="checkbox" id="brand-4" value="Dewalt">
               </li>
               <li>
+                <input type="checkbox" name="filter-brand" id="brand-5" value="Hitachi">
                 <label for="brand-5">Hitachi</label>
-                <input type="checkbox" id="brand-5" value="Hitachi">
               </li>
             </ul>
           </div>
@@ -106,12 +106,12 @@
             <h3>Питание:</h3>
             <ul>
               <li>
-                <input type="radio" id="power-1" value="1" checked>
-                <label for="power-1">Аккумуляторные</label>
+                <input type="radio" name="filter-power" id="power-type-1" value="1" checked>
+                <label for="power-type-1">Аккумуляторные</label>
               </li>
               <li>
-                <input type="radio" id="power-2" value="2">
-                <label for="power-2">Сетевые</label>
+                <input type="radio" name="filter-power" id="power-type-2" value="2">
+                <label for="power-type-2">Сетевые</label>
               </li>
             </ul>
           </div>
@@ -122,15 +122,14 @@
       <section class="main-gallery">
         <div class="gallery-sorting">
           <span class="gallery-sorting-name">Сортировка:</span>
-          <a href="#">По цене</a>
-          <a href="#">По типу</a>
-          <a href="#">По функционалу</a>
-          <a href="#">По возрастанию</a>
-          <a href="#">По убыванию</a>
+          <a class="sort-price" href="#">По цене</a>
+          <a class="sort-type" href="#">По типу</a>
+          <a class="sort-function" href="#">По функционалу</a>
+          <a class="sort-ascending" href="#">По возрастанию</a>
+          <a class="sort-descending" href="#">По убыванию</a>
         </div>
 
         <article class="gallery-item">
-          <div class="flag">новинка</div>
           <div class="gallery-actions">
             <a class="buy" href="#">Купить</a>
             <a class="bookmark" href="#">В закладки</a>
@@ -141,7 +140,6 @@
           <div class="new-price">15500 Р.</div>
         </article>
         <article class="gallery-item">
-          <div class="flag">новинка</div>
           <div class="gallery-actions">
             <a class="buy" href="#">Купить</a>
             <a class="bookmark" href="#">В закладки</a>
@@ -151,8 +149,7 @@
           <div class="old-price">30500 Р.</div>
           <div class="new-price">25500 Р.</div>
         </article>
-        <article class="gallery-item">
-          <div class="flag flag-new">новинка</div>
+        <article class="gallery-item gallery-item-new">
           <div class="gallery-actions">
             <a class="buy" href="#">Купить</a>
             <a class="bookmark" href="#">В закладки</a>
@@ -163,7 +160,6 @@
           <div class="new-price">12500 Р.</div>
         </article>
         <article class="gallery-item">
-          <div class="flag">новинка</div>
           <div class="gallery-actions">
             <a class="buy" href="#">Купить</a>
             <a class="bookmark" href="#">В закладки</a>
@@ -173,8 +169,7 @@
           <div class="old-price">22500 Р.</div>
           <div class="new-price">15500 Р.</div>
         </article>
-        <article class="gallery-item">
-          <div class="flag flag-new">новинка</div>
+        <article class="gallery-item gallery-item-new">
           <div class="gallery-actions">
             <a class="buy" href="#">Купить</a>
             <a class="bookmark" href="#">В закладки</a>
@@ -185,7 +180,6 @@
           <div class="new-price">25500 Р.</div>
         </article>
         <article class="gallery-item">
-          <div class="flag">новинка</div>
           <div class="gallery-actions">
             <a class="buy" href="#">Купить</a>
             <a class="bookmark" href="#">В закладки</a>
@@ -195,8 +189,7 @@
           <div class="old-price"></div>
           <div class="new-price">12500 Р.</div>
         </article>
-        <article class="gallery-item">
-          <div class="flag flag-new">новинка</div>
+        <article class="gallery-item gallery-item-new">
           <div class="gallery-actions">
             <a class="buy" href="#">Купить</a>
             <a class="bookmark" href="#">В закладки</a>
@@ -207,7 +200,6 @@
           <div class="new-price">15500 Р.</div>
         </article>
         <article class="gallery-item">
-          <div class="flag">новинка</div>
           <div class="gallery-actions">
             <a class="buy" href="#">Купить</a>
             <a class="bookmark" href="#">В закладки</a>
@@ -218,7 +210,6 @@
           <div class="new-price">25500 Р.</div>
         </article>
         <article class="gallery-item">
-          <div class="flag">новинка</div>
           <div class="gallery-actions">
             <a class="buy" href="#">Купить</a>
             <a class="bookmark" href="#">В закладки</a>
@@ -294,7 +285,7 @@
       </div>
     </footer>
 
-    <div class="cart-confirm">
+    <div class="modal-content-cart">
       <button class="close-btn"></button>
       <p>Товар добавлен в корзину!</p>
       <div class="confirm-btns clearfix">
