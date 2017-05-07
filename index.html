@@ -120,7 +120,7 @@
                 <a class="buy" href="#">Купить</a>
                 <a class="bookmark" href="#">В закладки</a>
               </div>
-              <div class="image"><img src="img/snippet-2.jpg" alt="BOSCH BFG 3000"></div>
+              <div class="image"><img src="img/snippet-2.jpg" alt="BOSCH BFG 3000" width="216" height="163"></div>
               <h3 class="item-name">Перфоратор BOSCH BFG 3000</h3>
               <div class="old-price">22500 Р.</div>
               <div class="new-price">15500 Р.</div>
@@ -130,7 +130,7 @@
                 <a class="buy" href="#">Купить</a>
                 <a class="bookmark" href="#">В закладки</a>
               </div>
-              <div class="image"><img src="img/snippet-3.jpg" alt="BOSCH BFG 6000"></div>
+              <div class="image"><img src="img/snippet-3.jpg" alt="BOSCH BFG 6000" width="216" height="163"></div>
               <h3 class="item-name">Перфоратор BOSCH BFG 6000</h3>
               <div class="old-price">30500 Р.</div>
               <div class="new-price">25500 Р.</div>
@@ -140,7 +140,7 @@
                 <a class="buy" href="#">Купить</a>
                 <a class="bookmark" href="#">В закладки</a>
               </div>
-              <div class="image"><img src="img/snippet-2.jpg" alt="BOSCH BFG 2000"></div>
+              <div class="image"><img src="img/snippet-2.jpg" alt="BOSCH BFG 2000" width="216" height="163"></div>
               <h3 class="item-name">Перфоратор BOSCH BFG 2000</h3>
               <div class="old-price"></div>
               <div class="new-price">12500 Р.</div>
@@ -206,7 +206,7 @@
           <div class="about-description-content">
             <p>Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта
               и строительства не оставит равнодушными любителей сэкномить на гастарбайтерах.</p>
-            <p>Мы можем доставить ваш товар в самые отдаленные точки России!
+            <p>Мы можем доставить ваш товар в самые отдаленные точки России!<br>
               Техномарт работает со многими транспортными компаниями:</p>
             <ul>
               <li>Деловые линии</li>
@@ -229,11 +229,14 @@
 
     <footer class="main-footer">
       <div class="footer-top">
-        <div class="container">
-          <div class="footer-top-first-line clearfix">
+        <div class="container clearfix">
+          <div class="footer-top-left-column">
             <a class="footer-logo" href="#">Техномарт</a>
-            <nav class="footer-main-nav clearfix">
-              <ul>
+            <p class="footer-address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>+7 (812) 555-05-55</p>
+          </div>
+          <div class="footer-top-right-column">
+            <nav class="footer-main-nav">
+              <ul class="clearfix">
                 <li><a href="#">Компания</a></li>
                 <li><a href="#">Новости</a></li>
                 <li><a href="catalog.html">Каталог</a></li>
@@ -241,11 +244,8 @@
                 <li><a href="#">Контакты</a></li>
               </ul>
             </nav>
-          </div>
-          <div class="footer-top-second-line clearfix">
-            <p class="footer-address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 +7 (812) 555-05-55</p>
             <nav class="footer-nav clearfix">
-              <ul>
+              <ul class="clearfix">
                 <li><a href="#">Материалы</a></li>
                 <li><a href="#">Техника</a></li>
                 <li><a href="#">Инструмент</a></li>
@@ -268,7 +268,7 @@
             <a href="#">mail@htmlacademy.ru</a>
           </div>
           <div class="designed-by">
-            Разработано -
+            Разработано —
             <a href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a>
           </div>
         </div>
@@ -281,14 +281,14 @@
         <div class="input-fields">
           <div class="half-width">
             <label for="user-name">Ваше имя:</label>
-            <input type="text" name="user-name" id="user-name" value="Представьтесь, пожалуйста" required>
+            <input type="text" name="user-name" id="user-name" value="" placeholder="Представьтесь, пожалуйста" required>
           </div>
           <div class="half-width">
             <label for="email">Ваш e-mail:</label>
-            <input type="email" name="email" id="email" value="Для отправки ответа" required><br>
+            <input type="email" name="email" id="email" value="" placeholder="Для отправки ответа" required><br>
           </div>
           <label for="mail-field">Текст письма:</label>
-          <textarea name="mail-field" id="mail-field" rows="8" cols="40">В свободной форме</textarea>
+          <textarea name="mail-field" id="mail-field" rows="8" cols="40" placeholder="В свободной форме"></textarea>
         </div>
         <div class="write-us-bottom clearfix">
           <input class="send-btn btn" type="submit" name="mail-submit" value="Отправить">
@@ -305,6 +305,14 @@
         <a href="#" class="continue-confirm-btn btn">Продолжить покупки</a>
       </div>
     </div>
+
+    <div class="modal-content-map">
+      <button class="close-btn"></button>
+      <img src="img/map-popup.png" width="940" height="447" alt="Карта">
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/script.js"></script>
 
   </body>
 </html>
