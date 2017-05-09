@@ -1,21 +1,30 @@
-
       var link = document.querySelector(".contact-btn");
       var popup = document.querySelector(".modal-content-write-us");
       var close = popup.querySelector(".close-btn");
       var form = popup.querySelector("form");
-      var name = popup.querySelector("[name=user-name]");
+      var login = popup.querySelector("[name=user-name]");
       var mail = popup.querySelector("[name=email]");
-      var storage = localStorage.getItem("name");
+      var loginStorage = localStorage.getItem("name");
+      var mailStorage = localStorage.getItem("mail");
+      var message = popup.querySelector("textarea");
 
       link.addEventListener("click", function(event) {
         event.preventDefault();
         popup.classList.add("modal-content-show");
-        name.focus();
-        if (storage) {
-          name.value = storage;
+        if (loginStorage) {
+          login.value = loginStorage;
           mail.focus();
         } else {
-          name.focus();
+          login.focus();
+        }
+        if (mailStorage) {
+          mail.value = mailStorage;
+          message.focus();
+        } else {
+          mail.focus();
+        }
+        if (!loginStorage && !mailStorage) {
+          login.focus();
         }
       });
 
@@ -26,13 +35,12 @@
       });
 
       form.addEventListener("submit", function(event) {
-        if (!name.value || !mail.value) {
+        if (!login.value || !mail.value || !message.value) {
           event.preventDefault();
-          popup.classList.remove("modal-error");
-          popup.offsetWidth = popup.offsetWidth;
           popup.classList.add("modal-error");
         } else {
-          localStorage.setItem("Name", name.value);
+          localStorage.setItem("login", login.value);
+          localStorage.setItem("mail", mail.value);
         }
       });
 

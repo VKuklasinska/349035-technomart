@@ -973,18 +973,6 @@ body {
   min-width: 194px;
 }
 
-/*.service-slide-one {
-  background-image: url("../img/service-1.png") no-repeat;
-}
-
-.service-slide-two {
-  background: url("../img/service-2.png") no-repeat;
-}
-
-.service-slide-three {
-  background: url("../img/service-3.png") no-repeat;
-}*/
-
 .about {
   margin-bottom: 86px;
 }
@@ -1024,6 +1012,12 @@ body {
 
 .about-contacts p {
   margin-bottom: 31px;
+}
+
+.about-contacts-content a {
+  display: block;
+  height: 158px;
+  width: 300px;
 }
 
 .about-description-content p:first-child {
@@ -1934,7 +1928,7 @@ body {
 .modal-content-write-us {
   display: none;
   position: fixed;
-  top: 20%;
+  top: 10%;
   left: 50%;
   margin-left: -295px;
   width: 620px;
