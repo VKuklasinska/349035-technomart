@@ -136,7 +136,7 @@ body {
 }
 
 .header-search-field:focus + .header-search-btn {
-  background: #ffffff url("../img/icon-search-active.png") no-repeat 50% 50%;
+  background: transparent url("../img/icon-search-active.png") no-repeat 50% 50%;
   opacity: 1;
 }
 
@@ -477,6 +477,17 @@ body {
   margin-bottom: 16px;
 }
 
+.new::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: url("../img/spritesheet.png") no-repeat -1273px -20px;
+  z-index:5;
+}
+
 .category-slider {
   position: relative;
   float: left;
@@ -620,11 +631,13 @@ body {
 .popular-items-heading,
 .popular-brands-heading {
   float: left;
-  width: 600px;
   color: #32425c;
   line-height: 89px;
-  width: 600px;
   margin-right: 33px;
+}
+
+.popular-brands-header {
+  padding-left: 25px;
 }
 
 .popular-items-btn,
@@ -851,7 +864,7 @@ body {
 
 .service {
   background-color: #f2f6f8;
-  padding-top: 67px;
+  padding-top: 68px;
   margin-bottom: 82px;
 }
 
@@ -864,7 +877,7 @@ body {
 
 .service-paragraph {
   margin-top: 29px;
-  margin-bottom: 68px;
+  margin-bottom: 69px;
 }
 
 .services-slider input[type="radio"] {
@@ -1552,6 +1565,10 @@ body {
   cursor: pointer;
 }
 
+.filter-power label {
+  font-size: 14px;
+}
+
 .filter-brand label:last-child,
 .filter-power label:last-child {
   margin-bottom: 0;
@@ -1564,16 +1581,12 @@ body {
   left: 0;
   width: 27px;
   height: 23px;
-  background-image: url("../img/spritesheet.png");
-  background-position: -20px -20px;
+  background: no-repeat url("../img/checkboxes.png") -5px -5px;
+  opacity: 0.8;
 }
 
-#brand-1:checked + label::before,
-#brand-2:checked + label::before,
-#brand-3:checked + label::before,
-#brand-4:checked + label::before,
-#brand-5:checked + label::before {
-  background-position: -83px -20px;
+input[name="filter-brand"]:checked + label::before {
+  background-position: -38px -5px;
 }
 
 .filter-power input {
@@ -1591,12 +1604,12 @@ body {
   border: 3px solid #c1c1c1;
 }
 
-.filter-power input:checked + label::before {
+input[name="filter-power"]:checked + label::before {
   background-clip: content-box;
   background-color: #c1c1c1;
 }
 
-.filter-power input:checked:not(:disabled) + label:hover::before {
+input[name="filter-power"]:checked:not(:disabled) + label:hover::before {
   background-clip: content-box;
   background-color: #b5b5b5;
 }
@@ -1605,21 +1618,17 @@ body {
   border: 3px solid #b5b5b5;
 }
 
-.filter-brand input:not(:checked) + label:hover::before {
-  background: url("../img/checkbox-hover.png") no-repeat;
+.filter-brand label:hover::before {
+  opacity: 1;
 }
 
-.filter-brand input:checked + label:hover::before {
-  background: url("../img/checked-hover.png") no-repeat;
-}
-
-.filter-power input:disabled + label,
-.filter-brand input:disabled + label {
+input[name="filter-power"]:disabled + label,
+input[name="filter-brand"]:disabled + label {
   color: rgba(0, 0, 0, 0.4);
 }
 
-.filter-power input:disabled + label::before,
-.filter-brand input:disabled + label::before {
+input[name="filter-power"]:disabled + label::before,
+input[name="filter-brand"]:disabled + label::before {
   opacity: 0.3;
 }
 
@@ -1842,6 +1851,10 @@ body {
   font-size: 13px;
 }
 
+.category-info span {
+  letter-spacing: 0.14px;
+}
+
 /*Модпльное окно CART*/
 
 .modal-content-cart {
@@ -1920,7 +1933,7 @@ body {
   top: 0;
   left: 0;
   z-index: 10;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 /*Модпльное окно WRITE US*/
@@ -1964,15 +1977,6 @@ body {
   20%, 40%, 60%, 80% {
     transform: translateX(10px);
   }
-}
-
-.modal-content-show {
-  display: block;
-  animation: bounce 0.6s;
-}
-
-.modal-error {
-  animation: shake 0.6s;
 }
 
 .close-btn {
@@ -2073,6 +2077,8 @@ body {
   margin-right: 0;
 }
 
+/* Карта */
+
 .modal-content-map {
   position: fixed;
   display: none;
@@ -2083,4 +2089,19 @@ body {
   background-color: white;
   box-shadow: 0 0 10px 5px rgba(35, 31, 32, 0.2);
   z-index: 20;
+}
+
+/* Для JS */
+
+.modal-content-show {
+  display: block;
+  animation: bounce 0.6s;
+}
+
+.modal-error {
+  animation: shake 0.6s;
+}
+
+.modal-overlay-show {
+  display: block;
 }
