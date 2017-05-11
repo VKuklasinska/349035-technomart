@@ -1,7 +1,5 @@
-var overlay = document.querySelector(".modal-overlay");
-
 // Для корзины
-
+var overlay = document.querySelector(".modal-overlay");
 var cartOpenList = document.querySelectorAll(".bookmark");
 var cartPopup = document.querySelector(".modal-content-cart");
 var cartClose = cartPopup.querySelector(".close-btn");
