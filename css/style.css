@@ -119,6 +119,7 @@ body {
   padding-left: 50px;
   border: none;
   line-height: 18px;
+  height: 42px;
   background-color: #293449;
   width: 224px;
   color: #ffffff;
@@ -361,7 +362,7 @@ body {
 .main-nav ul {
   margin: 0 auto;
   list-style: none;
-  padding: 0 20px;
+  padding-left: 20px;
   background-color: #32425c;
   box-shadow: 0 5px #293449;
   font-size: 0;
@@ -1144,7 +1145,7 @@ body {
 
 .footer-main-nav li:last-child {
   padding-right: 0;
-  padding-left: 26px;
+  padding-left: 25px;
 }
 
 .footer-main-nav li:first-child {
@@ -1943,7 +1944,7 @@ input[name="filter-brand"]:disabled + label::before {
   position: fixed;
   top: 10%;
   left: 50%;
-  margin-left: -295px;
+  margin-left: -310px;
   width: 620px;
   min-height: 423px;
   background-color: white;
@@ -2083,7 +2084,8 @@ input[name="filter-brand"]:disabled + label::before {
   position: fixed;
   display: none;
   top: 20%;
-  margin-left: 162px;
+  left: 50%;
+  margin-left: -470px;
   width: 940px;
   height: 447px;
   background-color: white;

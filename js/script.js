@@ -1,30 +1,45 @@
+// Based on https://mathiasbynens.be/notes/localstorage-pattern
+var hasStorage = (function() {
+	try {
+		localStorage.setItem(mod, mod);
+		localStorage.removeItem(mod);
+		return true;
+	} catch (exception) {
+		return false;
+	}
+}());
+
+if (hasStorage) {
+  var loginStorage = localStorage.getItem("name");
+  var mailStorage = localStorage.getItem("mail");
+}
+
       var link = document.querySelector(".contact-btn");
       var popup = document.querySelector(".modal-content-write-us");
       var close = popup.querySelector(".close-btn");
       var form = popup.querySelector("form");
       var login = popup.querySelector("[name=user-name]");
       var mail = popup.querySelector("[name=email]");
-      var loginStorage = localStorage.getItem("name");
-      var mailStorage = localStorage.getItem("mail");
       var message = popup.querySelector("textarea");
       var overlay = document.querySelector(".modal-overlay");
 
       link.addEventListener("click", function(event) {
         event.preventDefault();
         popup.classList.add("modal-content-show");
-        if (loginStorage) {
-          login.value = loginStorage;
-          mail.focus();
-        } else {
-          login.focus();
-        }
-        if (mailStorage) {
-          mail.value = mailStorage;
-          message.focus();
-        } else {
-          mail.focus();
-        }
-        if (!loginStorage && !mailStorage) {
+        if (hasStorage) {
+          if (loginStorage) {
+            login.value = loginStorage;
+            mail.focus();
+          } else {
+            login.focus();
+          }
+          if (mailStorage) {
+            mail.value = mailStorage;
+            message.focus();
+          } else {
+            mail.focus();
+          }
+        } else if (!loginStorage && !mailStorage) {
           login.focus();
         }
         overlay.classList.add("modal-overlay-show");
@@ -38,10 +53,10 @@
       });
 
       form.addEventListener("submit", function(event) {
+        event.preventDefault();
         if (!login.value || !mail.value || !message.value) {
-          event.preventDefault();
           popup.classList.add("modal-error");
-        } else {
+        } else if (hasStorage) {
           localStorage.setItem("login", login.value);
           localStorage.setItem("mail", mail.value);
         }
