@@ -41,7 +41,7 @@ body {
   text-transform: uppercase;
   font-size: 24px;
   text-align: center;
-  font-family: "Cuprum", sans-serif;
+  font-family: inherit;
 }
 
 .header-logo:hover,
@@ -87,9 +87,9 @@ body {
 .header-search-btn {
   position: absolute;
   display: inline-block;
+  vertical-align: top;
   left: 0;
   top: 0;
-  font-size: 17px;
   font-size: 0;
   border: none;
   margin:0;
@@ -114,6 +114,7 @@ body {
 
 .header-search-field {
   display: inline-block;
+  vertical-align: top;
   padding-top: 12px;
   padding-right: 7px;
   padding-bottom: 12px;
@@ -125,7 +126,7 @@ body {
   width: 224px;
   color: #ffffff;
   font-size: 17px;
-  font-family: "Cuprum", sans-serif;
+  font-family: inherit;
 }
 
 .header-search-field:hover {
@@ -470,7 +471,7 @@ body {
 }
 
 .category-name {
-  font-family: Cuprum, sans-serif;
+  font-family: inherit;
   font-size: 24px;
   font-weight: bold;
   color: #ffffff;
@@ -504,6 +505,7 @@ body {
 .category-slide-title {
   margin-bottom: 6px;
   font-size: 36px;
+  font-weight: bold;
   line-height: 36px;
   color: white;
   text-transform: uppercase;
@@ -513,7 +515,7 @@ body {
   font-size: 18px;
   margin-bottom: 121px;
   line-height: 18px;
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans", "Arial", sans-serif;
   color: white;
 }
 
@@ -542,10 +544,10 @@ body {
 
 .category-slider-controls label {
   display: inline-block;
+  vertical-align: top;
   width: 5px;
   height: 5px;
   margin-right: 11px;
-  vertical-align: top;
   background-color: white;
   border: 3px solid white;
   border-radius: 50%;
@@ -660,7 +662,7 @@ body {
   border: 1px solid #e5e5e5;
   width: 218px;
   font-weight: bold;
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans", "Arial",sans-serif;
   line-height: 20px;
   margin-right: 20px;
   margin-bottom: 20px;
@@ -717,7 +719,7 @@ body {
   color: #ffffff;
   font-size: 14px;
   font-weight: normal;
-  font-family: "Cuprum", sans-serif;
+  font-family: "Cuprum", "Arial", sans-serif;
   line-height: 18px;
   text-decoration: none;
   text-transform: uppercase;
@@ -872,7 +874,7 @@ body {
 
 .service-slider-paragraph,
 .service-paragraph {
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans", "Arial",sans-serif;
   font-size: 13px;
   margin: 0;
 }
@@ -922,6 +924,8 @@ body {
   font-size: 21px;
   line-height: 61px;
   color: #ffffff;
+  font-family: inherit;
+  font-weight: bold;
   padding-left: 23px;
   background-color: #32425c;
   box-shadow: inset 0 -1px 0 0 #293449,
@@ -984,6 +988,7 @@ body {
 
 .credit-btn {
   display: inline-block;
+  vertical-align: top;
   margin-top: 27px;
   min-width: 194px;
 }
@@ -1017,7 +1022,7 @@ body {
 .about-description p,
 .about-contacts p {
   font-size: 13px;
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans", "Arial",sans-serif;
   margin: 0;
 }
 
@@ -1033,6 +1038,7 @@ body {
   display: block;
   height: 158px;
   width: 300px;
+  background-color: #dcdbd6;
 }
 
 .about-description-content p:first-child {
@@ -1065,6 +1071,7 @@ body {
 
 .more-about-btn {
   display: inline-block;
+  vertical-align: top;
   min-width: 220px;
 }
 
@@ -1086,7 +1093,7 @@ body {
   margin-bottom: 32px;
   font-size: 30px;
   text-align: center;
-  font-family: "Cuprum", sans-serif;
+  font-family: inherit;
 }
 
 .footer-top-left-column,
@@ -1404,7 +1411,7 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 13px;
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans", "Arial",sans-serif;
   line-height: 59px;
   color: #000000;
 }
@@ -1462,7 +1469,7 @@ body {
 
 .filters h3 {
   font-size: 17px;
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans", "Arial",sans-serif;
   text-transform: uppercase;
   font-weight: bold;
   margin-bottom: 18px;
@@ -1512,7 +1519,7 @@ body {
   width: 82px;
   font-size: 17px;
   line-height: 18px;
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans", "Arial",sans-serif;
   text-align: center;
   font-style: normal;
   padding: 10px 7px;
@@ -1562,7 +1569,7 @@ body {
   margin: 17px 0;
   font-size: 15px;
   line-height: 23px;
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans", "Arial",sans-serif;
   text-transform: uppercase;
   cursor: pointer;
 }
@@ -1652,7 +1659,7 @@ input[name="filter-brand"]:disabled + label::before {
   border-radius: 2px;
   min-width: 140px;
   font-size: 13px;
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans", "Arial",sans-serif;
   text-transform: uppercase;
   padding: 9px 0;
   line-height: 18px;
@@ -1682,7 +1689,7 @@ input[name="filter-brand"]:disabled + label::before {
 .filters-heading {
   position: relative;
   font-size: 0px;
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans", "Arial",sans-serif;
   text-transform: uppercase;
   background-color: #f7f3ec;
   margin-bottom: 20px;
@@ -1819,7 +1826,7 @@ input[name="filter-brand"]:disabled + label::before {
   color: #000000;
   text-align: center;
   font-size: 13px;
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans", "Arial",sans-serif;
   line-height: 36px;
   width: 36px;
   border-radius: 2px;
@@ -1849,7 +1856,7 @@ input[name="filter-brand"]:disabled + label::before {
 
 .category-info p {
   margin: 0;
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans", "Arial",sans-serif;
   font-size: 13px;
 }
 
@@ -2022,7 +2029,7 @@ input[name="filter-brand"]:disabled + label::before {
 .send-btn {
   float: left;
   width: 460px;
-  font-family: "Cuprum", sans-serif;
+  font-family: inherit;
   border: none;
   border-radius: 3px;
 }
@@ -2048,7 +2055,7 @@ input[name="filter-brand"]:disabled + label::before {
     height: 18px;
     margin-bottom: 20px;
     padding: 8px 14px;
-    font-family: "PT Sans", sans-serif;
+    font-family: "PT Sans", "Arial",sans-serif;
     font-size: 13px;
     color: #999999;
     border: 2px solid #d7dcde;
@@ -2061,7 +2068,7 @@ input[name="filter-brand"]:disabled + label::before {
     margin: 0;
     height: 94px;
     padding: 8px 14px;
-    font-family: "PT Sans", sans-serif;
+    font-family: "PT Sans", "Arial",sans-serif;
     font-size: 13px;
     color: #999999;
     border: 2px solid #d7dcde;
@@ -2071,6 +2078,7 @@ input[name="filter-brand"]:disabled + label::before {
 
 .half-width {
   display: inline-block;
+  vertical-align: top;
   max-width: 220px;
   margin-right: 20px;
 }
@@ -2089,7 +2097,8 @@ input[name="filter-brand"]:disabled + label::before {
   margin-left: -470px;
   width: 940px;
   height: 447px;
-  background-color: white;
+  background-color: #dcdbd6;
+  color: black;
   box-shadow: 0 0 10px 5px rgba(35, 31, 32, 0.2);
   z-index: 20;
 }
