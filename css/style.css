@@ -6,6 +6,7 @@ body {
   font-family: "Cuprum", "PT Sans", "Arial", sans-serif;
   color: #000000;
   background-color: white;
+  min-width: 960px;
 }
 
 .container {
